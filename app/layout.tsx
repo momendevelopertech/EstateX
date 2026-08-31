@@ -7,9 +7,22 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const cairo = Cairo({ subsets: ["arabic", "latin"], variable: "--font-cairo" });
 
 export const metadata: Metadata = {
-  title: "EstateX — Real Estate Discovery Platform",
+  title: {
+    default: "EstateX — Real Estate Discovery Platform",
+    template: "%s | EstateX",
+  },
   description:
     "Discover, explore and compare premium real estate projects. Real-time inventory, interactive masterplans, and flexible payment plans.",
+  openGraph: {
+    title: "EstateX — Discover. Explore. Decide.",
+    description:
+      "Interactive real estate platform with live inventory, masterplan visualization, and instant payment plan calculators.",
+    siteName: "EstateX",
+    type: "website",
+  },
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -19,10 +32,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
             <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-700 text-sm font-black text-white">
-                E
-              </span>
-              <span className="text-lg font-extrabold tracking-tight">EstateX</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="EstateX logo" className="h-8 w-auto" />
             </Link>
             <div className="flex items-center gap-4 text-sm font-medium text-slate-600">
               <Link href="/projects/azure-hills" className="transition hover:text-emerald-700">

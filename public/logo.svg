@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" fill="none">
+  <!-- Icon mark -->
+  <g>
+    <rect x="0" y="0" width="72" height="72" rx="14" fill="url(#logoGrad)"/>
+    <g opacity="0.15">
+      <rect x="9" y="28" width="7" height="34" rx="1" fill="white"/>
+      <rect x="18" y="20" width="7" height="42" rx="1" fill="white"/>
+      <rect x="27" y="24" width="8" height="38" rx="1" fill="white"/>
+      <rect x="37" y="16" width="7" height="46" rx="1" fill="white"/>
+      <rect x="46" y="22" width="7" height="40" rx="1" fill="white"/>
+    </g>
+    <text x="36" y="52" font-family="system-ui,-apple-system,sans-serif" font-weight="900" font-size="42" fill="white" text-anchor="middle">E</text>
+  </g>
+  <!-- Wordmark -->
+  <text x="88" y="54" font-family="system-ui,-apple-system,sans-serif" font-weight="800" font-size="48" fill="#0f172a" letter-spacing="-1">Estate</text>
+  <text x="273" y="54" font-family="system-ui,-apple-system,sans-serif" font-weight="800" font-size="48" fill="#059669" letter-spacing="-1">X</text>
+  <defs>
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#059669"/>
+      <stop offset="1" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -48,8 +48,9 @@ function LoginForm() {
   return (
     <div className="w-full rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
       <div className="mb-6 text-center">
-        <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-700 text-xl font-black text-white">
-          E
+        <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="EstateX" className="h-full w-full object-contain" />
         </span>
         <h1 className="mt-3 text-2xl font-extrabold">Admin Dashboard</h1>
         <p className="mt-1 text-sm text-slate-500">Sign in to manage EstateX inventory</p>
