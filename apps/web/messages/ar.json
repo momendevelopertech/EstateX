@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "استيتم — اكتشف العقارات الفاخرة",
+    "description": "خرائط تفاعلية، توافر فوري، خطط سداد مرنة وتفاصيل على مستوى الوحدة."
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "projects": "المشاريع",
+    "favorites": "المفضلة",
+    "bookings": "حجوزاتي",
+    "login": "تسجيل الدخول",
+    "langLabel": "اللغة"
+  },
+  "hero": {
+    "badge": "اكتشف · استكشف · قارن · قرّر",
+    "title": "عقارات فاخرة تُستكشف كما ينبغي.",
+    "subtitle": "خرائط تفاعلية، توافر فوري، خطط سداد مرنة وتفاصيل على مستوى الوحدة.",
+    "cta": "استكشف {project}",
+    "startingFrom": "تبدأ من"
+  },
+  "home": {
+    "projectsTitle": "المشاريع المتاحة",
+    "projectsSubtitle": "اعثر على منزلك أو فرصتك الاستثمارية القادمة.",
+    "projectsEmpty": "لا توجد مشاريع متاحة حالياً."
+  },
+  "project": {
+    "overview": "نظرة عامة",
+    "location": "الموقع",
+    "developer": "المطوّر",
+    "launchDate": "تاريخ الإطلاق",
+    "startingPrice": "السعر المبدئي",
+    "status": "حالة المشروع",
+    "status_values": {
+      "pre_launch": "قبل الإطلاق",
+      "under_construction": "قيد الإنشاء",
+      "launched": "تم الإطلاق",
+      "completed": "مكتمل"
+    },
+    "buildings": "المباني",
+    "floors": "الطوابق",
+    "availableUnits": "وحدات متاحة",
+    "masterplan": "المخطط العام",
+    "amenities": "المرافق",
+    "pois": "الأماكن القريبة",
+    "building": "مبنى {name}",
+    "floor": "طابق {name}",
+    "showUnits": "عرض الوحدات",
+    "noUnits": "لا توجد وحدات تطابق هذا الاختيار."
+  },
+  "unit": {
+    "status": {
+      "available": "متاح",
+      "reserved": "محجوز",
+      "sold": "مباع",
+      "hidden": "مخفي"
+    },
+    "unitNo": "وحدة {no}",
+    "bedrooms": "غرف النوم",
+    "bathrooms": "الحمّامات",
+    "area": "المساحة",
+    "price": "السعر",
+    "sqm": "م²",
+    "perUnit": "/وحدة",
+    "paymentPlan": "خطة السداد",
+    "calculator": "حاسبة الأقساط",
+    "downPayment": "الدفعة المقدمة",
+    "months": "الأقساط ({count} شهر)",
+    "schedule": "الجدول التقديري",
+    "installment": "القسط الشهري",
+    "financed": "المبلغ المموّل",
+    "total": "السعر الإجمالي",
+    "adjust": "عدّل الأرقام وأعد الحساب.",
+    "error": "تعذّر الحساب — جرّب قيماً مختلفة.",
+    "favorite": "حفظ",
+    "unfavorite": "محفوظة",
+    "addComparison": "قارن",
+    "tours": "الجولة الافتراضية",
+    "tourScenes": "المشاهد",
+    "leadTitle": "احجز زيارة للموقع",
+    "leadName": "الاسم",
+    "leadPhone": "الهاتف",
+    "leadEmail": "البريد الإلكتروني",
+    "leadSubmit": "طلب الزيارة",
+    "leadSuccess": "تم استلام الطلب — سيتواصل معك فريقنا.",
+    "visitButton": "احجز زيارة",
+    "backToProject": "العودة إلى المشروع"
+  },
+  "favorites": {
+    "title": "الوحدات المحفوظة",
+    "empty": "لا توجد وحدات محفوظة بعد.",
+    "remove": "إزالة",
+    "notSignedIn": "تتطلب المفضلة جلسة زائر أو تسجيل دخول."
+  },
+  "common": {
+    "loading": "جارٍ التحميل…",
+    "notFound": "غير موجود",
+    "backToHome": "العودة إلى الرئيسية",
+    "unitsLabel": "وحدة",
+    "unitsLabel_plural": "وحدات",
+    "filterBedrooms": "غرف النوم",
+    "filterPriceMax": "السعر الأقصى",
+    "search": "بحث",
+    "apply": "تطبيق",
+    "reset": "إعادة تعيين",
+    "currency": "ج.م",
+    "all": "الكل"
+  },
+  "errors": {
+    "apiDown": "الخدمة غير متاحة مؤقتاً. حاول مرة أخرى لاحقاً."
+  }
+}

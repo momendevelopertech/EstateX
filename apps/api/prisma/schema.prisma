@@ -1,0 +1,454 @@
+// EstateX data model — mirrors 03-database-schema.md.
+// Concurrency-affecting fields: Unit.statusVersion + Unit.holdExpiresAt (02-architecture.md §3).
+// Multi-tenant readiness: Developer is a first-class entity; nullable tenant scoping columns
+// are present from Phase 1 (Risk R4) even though multi-tenancy activates in Phase 4.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+enum UnitStatus {
+  available
+  reserved
+  sold
+  hidden
+}
+
+enum ProjectStatus {
+  under_construction
+  ready
+  fully_sold
+}
+
+enum Currency {
+  EGP
+  USD
+}
+
+enum UnitView {
+  garden
+  pool
+  sea
+  city
+  street
+}
+
+enum MediaType {
+  image
+  video
+  model3d
+  panorama
+  floorplan
+  document
+}
+
+enum HotspotType {
+  navigation
+  info
+  finish_swap
+}
+
+enum InstallmentFrequency {
+  monthly
+  quarterly
+  semi_annual
+  annual
+}
+
+enum LeadStatus {
+  new
+  contacted
+  qualified
+  closed
+}
+
+enum BookingStatus {
+  pending
+  confirmed
+  completed
+  cancelled
+}
+
+enum NotificationType {
+  new_lead
+  status_change
+  import_result
+  booking_confirmation
+  favorite_update
+  other
+}
+
+enum NotificationChannel {
+  in_app
+  email
+  sms
+  whatsapp
+  push
+}
+
+enum NotificationStatus {
+  pending
+  sent
+  failed
+}
+
+enum UserLocale {
+  en
+  ar
+}
+
+model Developer {
+  id           String    @id @default(uuid())
+  name         String    @unique
+  logoUrl      String?
+  branding     Json?
+  customDomain String?
+  plan         String?
+  createdAt    DateTime  @default(now())
+  projects     Project[]
+  agents       Agent[]
+}
+
+model Project {
+  id            String        @id @default(uuid())
+  developerId   String
+  developer     Developer     @relation(fields: [developerId], references: [id])
+  name          String
+  slug          String        @unique
+  description   String?
+  latitude      Float?
+  longitude     Float?
+  status        ProjectStatus @default(under_construction)
+  startingPrice Decimal       @db.Decimal(14, 2)
+  baseCurrency  Currency      @default(EGP)
+  heroMediaId   String?
+  launchDate    DateTime?
+  createdAt     DateTime      @default(now())
+
+  zones           Zone[]
+  buildings       Building[]
+  amenities       Amenity[]
+  pois            LocationPOI[]
+  paymentPlans    PaymentPlan[]
+  leads           Lead[]
+  analyticsEvents AnalyticsEvent[]
+
+  @@index([developerId])
+}
+
+model Zone {
+  id        String     @id @default(uuid())
+  projectId String
+  project   Project    @relation(fields: [projectId], references: [id])
+  name      String
+  order     Int        @default(0)
+  buildings Building[]
+}
+
+model Building {
+  id          String  @id @default(uuid())
+  projectId   String
+  project     Project @relation(fields: [projectId], references: [id])
+  zoneId      String?
+  zone        Zone?   @relation(fields: [zoneId], references: [id])
+  name        String
+  floorsCount Int     @default(1)
+  model3dUrl  String?
+
+  floors Floor[]
+
+  @@unique([projectId, name])
+}
+
+model Floor {
+  id           String   @id @default(uuid())
+  buildingId   String
+  building     Building @relation(fields: [buildingId], references: [id])
+  number       Int
+  planImageUrl String?
+  units        Unit[]
+
+  @@unique([buildingId, number])
+}
+
+model UnitType {
+  id        String  @id @default(uuid())
+  name      String  @unique
+  bedrooms  Int
+  bathrooms Int
+  baseArea  Decimal @db.Decimal(10, 2)
+  units     Unit[]
+}
+
+model Unit {
+  id            String     @id @default(uuid())
+  floorId       String
+  floor         Floor      @relation(fields: [floorId], references: [id])
+  unitTypeId    String?
+  unitType      UnitType?  @relation(fields: [unitTypeId], references: [id])
+  unitNumber    String
+  area          Decimal    @db.Decimal(10, 2)
+  price         Decimal    @db.Decimal(14, 2)
+  status        UnitStatus @default(available)
+  // Optimistic-locking token — must be incremented atomically with status changes (FR-42).
+  statusVersion Int        @default(0)
+  // Soft hold: non-null while held for an agent/Lead; auto-reverts to available when expired.
+  holdExpiresAt DateTime?
+  view          UnitView?
+  orientation   String?
+  hasBalcony    Boolean    @default(false)
+  hasTerrace    Boolean    @default(false)
+  hasStorage    Boolean    @default(false)
+  hasGarden     Boolean    @default(false)
+  parkingSpots  Int        @default(0)
+  ceilingHeight Decimal?   @db.Decimal(5, 2)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  paymentPlans    PaymentPlan[]
+  priceHistory    PriceHistory[]
+  virtualTours    VirtualTour[]
+  favorites       Favorite[]
+  leads           Lead[]
+  bookings        Booking[]
+  analyticsEvents AnalyticsEvent[]
+
+  @@unique([floorId, unitNumber])
+  @@index([status])
+}
+
+model Amenity {
+  id        String  @id @default(uuid())
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id])
+  name      String
+  icon      String?
+  latitude  Float?
+  longitude Float?
+}
+
+model LocationPOI {
+  id              String  @id @default(uuid())
+  projectId       String
+  project         Project @relation(fields: [projectId], references: [id])
+  name            String
+  type            String?
+  distanceMinutes Int?
+  latitude        Float?
+  longitude       Float?
+}
+
+model Media {
+  id        String    @id @default(uuid())
+  ownerType String
+  ownerId   String
+  type      MediaType
+  url       String
+  order     Int       @default(0)
+}
+
+model VirtualTour {
+  id     String             @id @default(uuid())
+  unitId String
+  unit   Unit               @relation(fields: [unitId], references: [id])
+  name   String
+  scenes VirtualTourScene[]
+}
+
+model VirtualTourScene {
+  id            String      @id @default(uuid())
+  virtualTourId String
+  virtualTour   VirtualTour @relation(fields: [virtualTourId], references: [id])
+  roomName      String
+  panoramaUrl   String
+  areaSqm       Decimal?    @db.Decimal(10, 2)
+  order         Int         @default(0)
+  hotspotsFrom  Hotspot[]   @relation("from")
+  hotspotsTo    Hotspot[]   @relation("to")
+}
+
+model Hotspot {
+  id            String            @id @default(uuid())
+  sceneId       String
+  scene         VirtualTourScene  @relation("from", fields: [sceneId], references: [id])
+  targetSceneId String?
+  targetScene   VirtualTourScene? @relation("to", fields: [targetSceneId], references: [id])
+  type          HotspotType       @default(navigation)
+  xPosition     Float
+  yPosition     Float
+  label         String?
+}
+
+model GuestSession {
+  id                String       @id @default(uuid())
+  createdAt         DateTime     @default(now())
+  convertedToUserId String?
+  convertedToUser   User?        @relation("GuestMerge", fields: [convertedToUserId], references: [id])
+  expiresAt         DateTime
+  favorites         Favorite[]
+  comparisons       Comparison[]
+}
+
+// Exactly one of userId / guestSessionId must be set (nullable-pair constraint).
+model Favorite {
+  id             String        @id @default(uuid())
+  userId         String?
+  user           User?         @relation(fields: [userId], references: [id])
+  guestSessionId String?
+  guestSession   GuestSession? @relation(fields: [guestSessionId], references: [id])
+  unitId         String
+  unit           Unit          @relation(fields: [unitId], references: [id])
+  createdAt      DateTime      @default(now())
+
+  @@index([userId])
+  @@index([guestSessionId])
+}
+
+model Comparison {
+  id             String        @id @default(uuid())
+  userId         String?
+  user           User?         @relation(fields: [userId], references: [id])
+  guestSessionId String?
+  guestSession   GuestSession? @relation(fields: [guestSessionId], references: [id])
+  unitIds        Json
+  createdAt      DateTime      @default(now())
+}
+
+model Role {
+  id          String @id @default(uuid())
+  name        String @unique
+  permissions Json
+  users       User[]
+}
+
+model User {
+  id           String     @id @default(uuid())
+  name         String?
+  email        String     @unique
+  phone        String?
+  passwordHash String?
+  roleId       String?
+  role         Role?      @relation(fields: [roleId], references: [id])
+  locale       UserLocale @default(en)
+  createdAt    DateTime   @default(now())
+
+  agents              Agent[]
+  leads               Lead[]
+  favorites           Favorite[]
+  comparisons         Comparison[]
+  notifications       Notification[]
+  auditLogs           AuditLog[]
+  priceChanges        PriceHistory[]
+  analyticsEvents     AnalyticsEvent[]
+  guestSessionsMerged GuestSession[]   @relation("GuestMerge")
+}
+
+model Agent {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  developerId String
+  developer   Developer @relation(fields: [developerId], references: [id])
+  leads       Lead[]
+}
+
+model Lead {
+  id              String     @id @default(uuid())
+  userId          String?
+  user            User?      @relation(fields: [userId], references: [id])
+  guestContact    Json?
+  projectId       String
+  project         Project    @relation(fields: [projectId], references: [id])
+  unitId          String?
+  unit            Unit?      @relation(fields: [unitId], references: [id])
+  source          String?
+  filtersUsed     Json?
+  message         String?
+  status          LeadStatus @default(new)
+  assignedAgentId String?
+  assignedAgent   Agent?     @relation(fields: [assignedAgentId], references: [id])
+  createdAt       DateTime   @default(now())
+  bookings        Booking[]
+}
+
+model Booking {
+  id          String        @id @default(uuid())
+  leadId      String
+  lead        Lead          @relation(fields: [leadId], references: [id])
+  unitId      String
+  unit        Unit          @relation(fields: [unitId], references: [id])
+  scheduledAt DateTime
+  status      BookingStatus @default(pending)
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(uuid())
+  sessionId String?
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  eventType String
+  projectId String?
+  project   Project? @relation(fields: [projectId], references: [id])
+  unitId    String?
+  unit      Unit?    @relation(fields: [unitId], references: [id])
+  metadata  Json?
+  timestamp DateTime @default(now())
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  action    String
+  entity    String
+  entityId  String?
+  timestamp DateTime @default(now())
+}
+
+model PaymentPlan {
+  id                    String               @id @default(uuid())
+  projectId             String?
+  project               Project?             @relation(fields: [projectId], references: [id])
+  unitId                String?
+  unit                  Unit?                @relation(fields: [unitId], references: [id])
+  name                  String
+  downPaymentPercent    Decimal              @db.Decimal(5, 2)
+  numberOfInstallments  Int
+  installmentFrequency  InstallmentFrequency @default(monthly)
+  deliveryLinkedPercent Decimal?             @db.Decimal(5, 2)
+  notes                 String?
+
+  // unit override OR project default (allows both null only when neither set — enforced in app)
+  @@index([projectId])
+  @@index([unitId])
+}
+
+model PriceHistory {
+  id              String   @id @default(uuid())
+  unitId          String
+  unit            Unit     @relation(fields: [unitId], references: [id])
+  oldPrice        Decimal? @db.Decimal(14, 2)
+  newPrice        Decimal  @db.Decimal(14, 2)
+  changedByUserId String?
+  changedByUser   User?    @relation(fields: [changedByUserId], references: [id])
+  changedAt       DateTime @default(now())
+}
+
+model Notification {
+  id               String              @id @default(uuid())
+  recipientUserId  String?
+  recipientUser    User?               @relation(fields: [recipientUserId], references: [id])
+  recipientContact Json?
+  type             NotificationType
+  channel          NotificationChannel
+  payload          Json?
+  status           NotificationStatus  @default(pending)
+  relatedEntity    String?
+  relatedEntityId  String?
+  createdAt        DateTime            @default(now())
+  sentAt           DateTime?
+}

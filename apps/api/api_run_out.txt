@@ -1,0 +1,51 @@
+﻿[32m[Nest] 20020  - [39m09/01/2026, 3:05:25 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 20020  - [39m09/01/2026, 3:05:25 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +23ms[39m
+[32m[Nest] 20020  - [39m09/01/2026, 3:05:25 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 20020  - [39m09/01/2026, 3:05:25 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +4ms[39m
+[32m[Nest] 20020  - [39m09/01/2026, 3:05:25 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mThrottlerModule dependencies initialized[39m[38;5;3m +0ms[39m
+node : [31m[Nest] 20020  - [39m09/01/2026, 3:05:25 PM [31m  ERROR[39m [38;5;3m[ExceptionHandler] [39m[31mNest 
+can't resolve dependencies of the RolesGuard (Reflector, ?). Please make sure that the argument JwtService at index 
+[1] is available in the UsersModule context.
+At line:1 char:85
++ ... tinue | Select-Object Id, ProcessName; node dist/main.js 2>&1 | Out-F ...
++                                            ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([31m[Nest] 200...Module context.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Potential solutions:
+- Is UsersModule a valid NestJS module?
+- If JwtService is a provider, is it part of the current UsersModule?
+- If JwtService is exported from a separate @Module, is that module imported within UsersModule?
+  @Module({
+    imports: [ /* the Module containing JwtService */ ]
+  })
+[39m
+Error: Nest can't resolve dependencies of the RolesGuard (Reflector, ?). Please make sure that the argument JwtService 
+at index [1] is available in the UsersModule context.
+
+Potential solutions:
+- Is UsersModule a valid NestJS module?
+- If JwtService is a provider, is it part of the current UsersModule?
+- If JwtService is exported from a separate @Module, is that module imported within UsersModule?
+  @Module({
+    imports: [ /* the Module containing JwtService */ ]
+  })
+
+    at Injector.lookupComponentInParentModules (C:\Users\Momen\Downloads\EstateX_SRS 
+files_new\node_modules\@nestjs\core\injector\injector.js:262:19)
+    at async Injector.resolveComponentInstance (C:\Users\Momen\Downloads\EstateX_SRS 
+files_new\node_modules\@nestjs\core\injector\injector.js:215:33)
+    at async resolveParam (C:\Users\Momen\Downloads\EstateX_SRS 
+files_new\node_modules\@nestjs\core\injector\injector.js:129:38)
+    at async Promise.all (index 1)
+    at async Injector.resolveConstructorParams (C:\Users\Momen\Downloads\EstateX_SRS 
+files_new\node_modules\@nestjs\core\injector\injector.js:144:27)
+    at async Injector.loadInstance (C:\Users\Momen\Downloads\EstateX_SRS 
+files_new\node_modules\@nestjs\core\injector\injector.js:70:13)
+    at async Injector.loadInjectable (C:\Users\Momen\Downloads\EstateX_SRS 
+files_new\node_modules\@nestjs\core\injector\injector.js:94:9)
+    at async C:\Users\Momen\Downloads\EstateX_SRS files_new\node_modules\@nestjs\core\injector\instance-loader.js:80:13
+    at async Promise.all (index 1)
+    at async InstanceLoader.createInstancesOfInjectables (C:\Users\Momen\Downloads\EstateX_SRS 
+files_new\node_modules\@nestjs\core\injector\instance-loader.js:79:9)

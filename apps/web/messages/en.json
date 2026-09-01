@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "EstateX — Premium real estate discovery",
+    "description": "Interactive masterplans, real-time availability, flexible payment plans and unit-level detail."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "favorites": "Favorites",
+    "bookings": "My bookings",
+    "login": "Sign in",
+    "langLabel": "Language"
+  },
+  "hero": {
+    "badge": "Discover · Explore · Compare · Decide",
+    "title": "Premium real estate, explored the way it should be.",
+    "subtitle": "Interactive masterplans, real-time availability, flexible payment plans and unit-level detail.",
+    "cta": "Explore {project}",
+    "startingFrom": "Starting from"
+  },
+  "home": {
+    "projectsTitle": "Available projects",
+    "projectsSubtitle": "Find your next home or investment opportunity.",
+    "projectsEmpty": "No projects available right now."
+  },
+  "project": {
+    "overview": "Overview",
+    "location": "Location",
+    "developer": "Developer",
+    "launchDate": "Launch date",
+    "startingPrice": "Starting price",
+    "status": "Project status",
+    "status_values": {
+      "pre_launch": "Pre-launch",
+      "under_construction": "Under construction",
+      "launched": "Launched",
+      "completed": "Completed"
+    },
+    "buildings": "Buildings",
+    "floors": "Floors",
+    "availableUnits": "Available units",
+    "masterplan": "Masterplan",
+    "amenities": "Amenities",
+    "pois": "Nearby places",
+    "building": "Building {name}",
+    "floor": "Floor {name}",
+    "showUnits": "Show units",
+    "noUnits": "No units match this selection."
+  },
+  "unit": {
+    "status": {
+      "available": "Available",
+      "reserved": "Reserved",
+      "sold": "Sold",
+      "hidden": "Hidden"
+    },
+    "unitNo": "Unit {no}",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "area": "Area",
+    "price": "Price",
+    "sqm": "m²",
+    "perUnit": "/unit",
+    "paymentPlan": "Payment plan",
+    "calculator": "Installment calculator",
+    "downPayment": "Down payment",
+    "months": "Installments ({count} months)",
+    "schedule": "Estimated schedule",
+    "installment": "Monthly installment",
+    "financed": "Amount financed",
+    "total": "Total price",
+    "adjust": "Adjust the figures and recalculate.",
+    "error": "Could not calculate — try different values.",
+    "favorite": "Save",
+    "unfavorite": "Saved",
+    "addComparison": "Compare",
+    "tours": "Virtual tour",
+    "tourScenes": "Scenes",
+    "leadTitle": "Book a site visit",
+    "leadName": "Name",
+    "leadPhone": "Phone",
+    "leadEmail": "Email",
+    "leadSubmit": "Request visit",
+    "leadSuccess": "Request received — our team will contact you.",
+    "visitButton": "Book a visit",
+    "backToProject": "Back to project"
+  },
+  "favorites": {
+    "title": "Saved units",
+    "empty": "You have no saved units yet.",
+    "remove": "Remove",
+    "notSignedIn": "Favorites require a guest session or login."
+  },
+  "common": {
+    "loading": "Loading…",
+    "notFound": "Not found",
+    "backToHome": "Back to home",
+    "unitsLabel": "unit",
+    "unitsLabel_plural": "units",
+    "filterBedrooms": "Bedrooms",
+    "filterPriceMax": "Max price",
+    "search": "Search",
+    "apply": "Apply",
+    "reset": "Reset",
+    "currency": "EGP",
+    "all": "All"
+  },
+  "errors": {
+    "apiDown": "The service is temporarily unavailable. Please try again."
+  }
+}
