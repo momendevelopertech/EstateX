@@ -1,12 +1,13 @@
 import { NestFactory } from "@nestjs/core";
-import { ValidationPipe } from "@nestjs/common";
-import serverless, { type Handler } from "serverless-http";
+import { ValidationPipe, type INestApplication } from "@nestjs/common";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type * as express from "express";
 import { AppModule } from "./src/app.module";
 
-let cachedHandler: Handler | null = null;
+let cachedApp: INestApplication | null = null;
 
-export const handler: Handler = async (event, context) => {
-  if (!cachedHandler) {
+async function bootstrap(): Promise<express.Express> {
+  if (!cachedApp) {
     const app = await NestFactory.create(AppModule, { bodyParser: true });
     app.setGlobalPrefix("api");
     app.enableCors({ credentials: true, origin: true });
@@ -14,7 +15,12 @@ export const handler: Handler = async (event, context) => {
       new ValidationPipe({ whitelist: true, transform: true, forbidNonWhitelisted: false }),
     );
     await app.init();
-    cachedHandler = serverless(app.getHttpAdapter().getInstance());
+    cachedApp = app;
   }
-  return cachedHandler(event, context);
-};
+  return cachedApp.getHttpAdapter().getInstance() as express.Express;
+}
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  const server = await bootstrap();
+  return server(req, res);
+}
