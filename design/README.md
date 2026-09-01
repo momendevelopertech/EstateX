@@ -1,176 +1,42 @@
-# EstateX — UI Design System & User Flows Index
+# EstateX — Design (Google Stitch)
 
-This directory contains all **115 design screens** exported from Google Stitch for the **File Content Executor** project.
+Design screens exported from **Google Stitch** (project `15015285934878213590`),
+organized by user flow. Screens are full-width desktop marketing-site captures
+(2560 px wide).
 
-The screens are categorized into **7 primary User Flows**, each separated by language (`EN` / `AR`) and mapped to device types.
+All screens currently in Stitch are in **English (EN / LTR)**. No Arabic (AR / RTL)
+versions exist yet in this Stitch project. When AR versions are added, place them in the
+same flow folder with an `-AR` suffix (e.g. `Homepage-Light-AR.png`).
 
-## 📊 Summary Overview
+## Folder -> Flow mapping
 
-| User Flow Directory | Total Screens | English (EN) | Arabic (AR) |
-|---|---|---|---|
-| [`01-public-discovery-flow/`](./01-public-discovery-flow/) | 37 | 21 | 16 |
-| [`02-location-masterplan-flow/`](./02-location-masterplan-flow/) | 12 | 6 | 6 |
-| [`03-unit-details-tour-flow/`](./03-unit-details-tour-flow/) | 11 | 5 | 6 |
-| [`04-search-filter-comparison-flow/`](./04-search-filter-comparison-flow/) | 19 | 10 | 9 |
-| [`05-lead-capture-booking-flow/`](./05-lead-capture-booking-flow/) | 6 | 2 | 4 |
-| [`06-agent-sales-center-flow/`](./06-agent-sales-center-flow/) | 14 | 8 | 6 |
-| [`07-admin-inventory-management-flow/`](./07-admin-inventory-management-flow/) | 16 | 7 | 9 |
+| Folder | Flow (maps to SRS) | Files |
+|---|---|---|
+| `01-Landing-Home` | Landing / Home (FR-01, Epic 1.1) | Homepage Light/Dark, Homepage-v2 Dark, Homepage with Projects & Blog Dark |
+| `02-About` | About the developer (marketing) | About Light/Dark |
+| `03-Projects` | Project list / gallery & search (FR-02/03, Epic 1.1) | Projects Gallery Light/Dark |
+| `04-Project-Detail` | Project home / case study (FR-01) | Project Case Study Light/Dark |
+| `05-News-Insights` | Blog / news (marketing) | News & Insights Light |
+| `06-Contact-Leads` | Contact & Lead capture (FR-35/36/37) | Contact Light/Dark |
+| `07-Admin-Dashboard` | Admin / inventory dashboard (FR-40/41/42) | Admin Dashboard Dark |
 
----
+## Flows from the SRS not yet designed in Stitch
 
-## 📁 [01-public-discovery-flow](./01-public-discovery-flow/)
+The interactive EstateX flows described in the MD files are **not yet present** as
+screens in this Stitch project. They are the core differentiators and need design:
 
-| Preview | Title | Language | Device | Local Path |
-|---|---|---|---|---|
-| ![Project Home (EN) - Mobile](01-public-discovery-flow/EN/Project_Home_EN_-_Mobile_22ae256d.png) | Project Home (EN) - Mobile | `EN` | `MOBILE` | [`Project_Home_EN_-_Mobile_22ae256d.png`](./01-public-discovery-flow/EN/Project_Home_EN_-_Mobile_22ae256d.png) |
-| ![الصفحة الرئيسية (AR) - Desktop](01-public-discovery-flow/AR/الصفحة_الرئيسية_AR_-_Desktop_d744d95b.png) | الصفحة الرئيسية (AR) - Desktop | `AR` | `DESKTOP` | [`الصفحة_الرئيسية_AR_-_Desktop_d744d95b.png`](./01-public-discovery-flow/AR/الصفحة_الرئيسية_AR_-_Desktop_d744d95b.png) |
-| ![Project Home (EN) - Desktop](01-public-discovery-flow/EN/Project_Home_EN_-_Desktop_bf440991.png) | Project Home (EN) - Desktop | `EN` | `DESKTOP` | [`Project_Home_EN_-_Desktop_bf440991.png`](./01-public-discovery-flow/EN/Project_Home_EN_-_Desktop_bf440991.png) |
-| ![README.md](01-public-discovery-flow/EN/READMEmd_43992678.png) | README.md | `EN` | `DESKTOP` | [`READMEmd_43992678.png`](./01-public-discovery-flow/EN/READMEmd_43992678.png) |
-| ![Smart Recommendations (EN) - Mobile](01-public-discovery-flow/EN/Smart_Recommendations_EN_-_Mobile_5d4b339c.png) | Smart Recommendations (EN) - Mobile | `EN` | `MOBILE` | [`Smart_Recommendations_EN_-_Mobile_5d4b339c.png`](./01-public-discovery-flow/EN/Smart_Recommendations_EN_-_Mobile_5d4b339c.png) |
-| ![Lead Capture Form (EN) - Mobile](01-public-discovery-flow/EN/Lead_Capture_Form_EN_-_Mobile_094f952d.png) | Lead Capture Form (EN) - Mobile | `EN` | `MOBILE` | [`Lead_Capture_Form_EN_-_Mobile_094f952d.png`](./01-public-discovery-flow/EN/Lead_Capture_Form_EN_-_Mobile_094f952d.png) |
-| ![Media Management (EN) - Desktop](01-public-discovery-flow/EN/Media_Management_EN_-_Desktop_6ebc9073.png) | Media Management (EN) - Desktop | `EN` | `DESKTOP` | [`Media_Management_EN_-_Desktop_6ebc9073.png`](./01-public-discovery-flow/EN/Media_Management_EN_-_Desktop_6ebc9073.png) |
-| ![Smart Recommendations (AR) - Mobile](01-public-discovery-flow/AR/Smart_Recommendations_AR_-_Mobile_a9e16fb7.png) | Smart Recommendations (AR) - Mobile | `AR` | `MOBILE` | [`Smart_Recommendations_AR_-_Mobile_a9e16fb7.png`](./01-public-discovery-flow/AR/Smart_Recommendations_AR_-_Mobile_a9e16fb7.png) |
-| ![Lead Capture Form (EN) - Desktop](01-public-discovery-flow/EN/Lead_Capture_Form_EN_-_Desktop_b7a2416c.png) | Lead Capture Form (EN) - Desktop | `EN` | `DESKTOP` | [`Lead_Capture_Form_EN_-_Desktop_b7a2416c.png`](./01-public-discovery-flow/EN/Lead_Capture_Form_EN_-_Desktop_b7a2416c.png) |
-| ![Notification Feed (EN) - Desktop](01-public-discovery-flow/EN/Notification_Feed_EN_-_Desktop_4f2fd41b.png) | Notification Feed (EN) - Desktop | `EN` | `DESKTOP` | [`Notification_Feed_EN_-_Desktop_4f2fd41b.png`](./01-public-discovery-flow/EN/Notification_Feed_EN_-_Desktop_4f2fd41b.png) |
-| ![Projects List (EN) - Desktop](01-public-discovery-flow/EN/Projects_List_EN_-_Desktop_48957a80.png) | Projects List (EN) - Desktop | `EN` | `DESKTOP` | [`Projects_List_EN_-_Desktop_48957a80.png`](./01-public-discovery-flow/EN/Projects_List_EN_-_Desktop_48957a80.png) |
-| ![تفاصيل العميل (AR) - Desktop](01-public-discovery-flow/AR/تفاصيل_العميل_AR_-_Desktop_2eb7bbdc.png) | تفاصيل العميل (AR) - Desktop | `AR` | `DESKTOP` | [`تفاصيل_العميل_AR_-_Desktop_2eb7bbdc.png`](./01-public-discovery-flow/AR/تفاصيل_العميل_AR_-_Desktop_2eb7bbdc.png) |
-| ![Smart Recommendations (AR) - Desktop](01-public-discovery-flow/AR/Smart_Recommendations_AR_-_Desktop_a028df82.png) | Smart Recommendations (AR) - Desktop | `AR` | `DESKTOP` | [`Smart_Recommendations_AR_-_Desktop_a028df82.png`](./01-public-discovery-flow/AR/Smart_Recommendations_AR_-_Desktop_a028df82.png) |
-| ![مشاركة ورمز الاستجابة السريعة (AR) - Desktop](01-public-discovery-flow/AR/مشاركة_ورمز_الاستجابة_السريعة_AR_-_Desktop_7756a85e.png) | مشاركة ورمز الاستجابة السريعة (AR) - Desktop | `AR` | `DESKTOP` | [`مشاركة_ورمز_الاستجابة_السريعة_AR_-_Desktop_7756a85e.png`](./01-public-discovery-flow/AR/مشاركة_ورمز_الاستجابة_السريعة_AR_-_Desktop_7756a85e.png) |
-| ![Unit Status Update - Conflict State (EN) - Desktop](01-public-discovery-flow/EN/Unit_Status_Update_-_Conflict_State_EN_-_Desktop_765f1df4.png) | Unit Status Update - Conflict State (EN) - Desktop | `EN` | `DESKTOP` | [`Unit_Status_Update_-_Conflict_State_EN_-_Desktop_765f1df4.png`](./01-public-discovery-flow/EN/Unit_Status_Update_-_Conflict_State_EN_-_Desktop_765f1df4.png) |
-| ![إدارة المخزون (AR) - Desktop](01-public-discovery-flow/AR/إدارة_المخزون_AR_-_Desktop_6a74fe35.png) | إدارة المخزون (AR) - Desktop | `AR` | `DESKTOP` | [`إدارة_المخزون_AR_-_Desktop_6a74fe35.png`](./01-public-discovery-flow/AR/إدارة_المخزون_AR_-_Desktop_6a74fe35.png) |
-| ![Bulk Import Wizard (EN) - Desktop](01-public-discovery-flow/EN/Bulk_Import_Wizard_EN_-_Desktop_c20005b7.png) | Bulk Import Wizard (EN) - Desktop | `EN` | `DESKTOP` | [`Bulk_Import_Wizard_EN_-_Desktop_c20005b7.png`](./01-public-discovery-flow/EN/Bulk_Import_Wizard_EN_-_Desktop_c20005b7.png) |
-| ![معالج الاستيراد الجماعي (AR) - Desktop](01-public-discovery-flow/AR/معالج_الاستيراد_الجماعي_AR_-_Desktop_e8cec305.png) | معالج الاستيراد الجماعي (AR) - Desktop | `AR` | `DESKTOP` | [`معالج_الاستيراد_الجماعي_AR_-_Desktop_e8cec305.png`](./01-public-discovery-flow/AR/معالج_الاستيراد_الجماعي_AR_-_Desktop_e8cec305.png) |
-| ![تبديل العملات (AR) - Desktop](01-public-discovery-flow/AR/تبديل_العملات_AR_-_Desktop_d1c84da6.png) | تبديل العملات (AR) - Desktop | `AR` | `DESKTOP` | [`تبديل_العملات_AR_-_Desktop_d1c84da6.png`](./01-public-discovery-flow/AR/تبديل_العملات_AR_-_Desktop_d1c84da6.png) |
-| ![مستكشف المباني والأدوار (AR) - Mobile](01-public-discovery-flow/AR/مستكشف_المباني_والأدوار_AR_-_Mobile_0e9ab528.png) | مستكشف المباني والأدوار (AR) - Mobile | `AR` | `MOBILE` | [`مستكشف_المباني_والأدوار_AR_-_Mobile_0e9ab528.png`](./01-public-discovery-flow/AR/مستكشف_المباني_والأدوار_AR_-_Mobile_0e9ab528.png) |
-| ![إدارة واجهة البرمجة والويبهوك (AR) - Desktop](01-public-discovery-flow/AR/إدارة_واجهة_البرمجة_والويبهوك_AR_-_Desktop_5c399758.png) | إدارة واجهة البرمجة والويبهوك (AR) - Desktop | `AR` | `DESKTOP` | [`إدارة_واجهة_البرمجة_والويبهوك_AR_-_Desktop_5c399758.png`](./01-public-discovery-flow/AR/إدارة_واجهة_البرمجة_والويبهوك_AR_-_Desktop_5c399758.png) |
-| ![Notification Dropdown (EN) - Tablet](01-public-discovery-flow/EN/Notification_Dropdown_EN_-_Tablet_26f86932.png) | Notification Dropdown (EN) - Tablet | `EN` | `DESKTOP` | [`Notification_Dropdown_EN_-_Tablet_26f86932.png`](./01-public-discovery-flow/EN/Notification_Dropdown_EN_-_Tablet_26f86932.png) |
-| ![Developer (Tenant) Management (EN) - Desktop](01-public-discovery-flow/EN/Developer_Tenant_Management_EN_-_Desktop_d24e3f18.png) | Developer (Tenant) Management (EN) - Desktop | `EN` | `DESKTOP` | [`Developer_Tenant_Management_EN_-_Desktop_d24e3f18.png`](./01-public-discovery-flow/EN/Developer_Tenant_Management_EN_-_Desktop_d24e3f18.png) |
-| ![White-Label Branding Preview (EN) - Desktop](01-public-discovery-flow/EN/White-Label_Branding_Preview_EN_-_Desktop_f9f8eeb4.png) | White-Label Branding Preview (EN) - Desktop | `EN` | `DESKTOP` | [`White-Label_Branding_Preview_EN_-_Desktop_f9f8eeb4.png`](./01-public-discovery-flow/EN/White-Label_Branding_Preview_EN_-_Desktop_f9f8eeb4.png) |
-| ![إدارة الأدوار والصلاحيات (AR) - Desktop](01-public-discovery-flow/AR/إدارة_الأدوار_والصلاحيات_AR_-_Desktop_7a97dc7a.png) | إدارة الأدوار والصلاحيات (AR) - Desktop | `AR` | `DESKTOP` | [`إدارة_الأدوار_والصلاحيات_AR_-_Desktop_7a97dc7a.png`](./01-public-discovery-flow/AR/إدارة_الأدوار_والصلاحيات_AR_-_Desktop_7a97dc7a.png) |
-| ![Roles & Permissions (EN) - Desktop](01-public-discovery-flow/EN/Roles_Permissions_EN_-_Desktop_666c2611.png) | Roles & Permissions (EN) - Desktop | `EN` | `DESKTOP` | [`Roles_Permissions_EN_-_Desktop_666c2611.png`](./01-public-discovery-flow/EN/Roles_Permissions_EN_-_Desktop_666c2611.png) |
-| ![Unit Selector (EN) - Desktop](01-public-discovery-flow/EN/Unit_Selector_EN_-_Desktop_6300d177.png) | Unit Selector (EN) - Desktop | `EN` | `DESKTOP` | [`Unit_Selector_EN_-_Desktop_6300d177.png`](./01-public-discovery-flow/EN/Unit_Selector_EN_-_Desktop_6300d177.png) |
-| ![سجل التدقيق (AR) - Desktop](01-public-discovery-flow/AR/سجل_التدقيق_AR_-_Desktop_14941e96.png) | سجل التدقيق (AR) - Desktop | `AR` | `DESKTOP` | [`سجل_التدقيق_AR_-_Desktop_14941e96.png`](./01-public-discovery-flow/AR/سجل_التدقيق_AR_-_Desktop_14941e96.png) |
-| ![مستكشف المباني والأدوار (AR) - Desktop](01-public-discovery-flow/AR/مستكشف_المباني_والأدوار_AR_-_Desktop_3d4d621f.png) | مستكشف المباني والأدوار (AR) - Desktop | `AR` | `DESKTOP` | [`مستكشف_المباني_والأدوار_AR_-_Desktop_3d4d621f.png`](./01-public-discovery-flow/AR/مستكشف_المباني_والأدوار_AR_-_Desktop_3d4d621f.png) |
-| ![Smart Recommendations (EN) - Desktop](01-public-discovery-flow/EN/Smart_Recommendations_EN_-_Desktop_b21cb67c.png) | Smart Recommendations (EN) - Desktop | `EN` | `DESKTOP` | [`Smart_Recommendations_EN_-_Desktop_b21cb67c.png`](./01-public-discovery-flow/EN/Smart_Recommendations_EN_-_Desktop_b21cb67c.png) |
-| ![Unit Selector (EN) - Mobile](01-public-discovery-flow/EN/Unit_Selector_EN_-_Mobile_9bdd2252.png) | Unit Selector (EN) - Mobile | `EN` | `MOBILE` | [`Unit_Selector_EN_-_Mobile_9bdd2252.png`](./01-public-discovery-flow/EN/Unit_Selector_EN_-_Mobile_9bdd2252.png) |
-| ![معاينة العلامة التجارية البيضاء (AR) - Desktop](01-public-discovery-flow/AR/معاينة_العلامة_التجارية_البيضاء_AR_-_Desktop_f4c5233c.png) | معاينة العلامة التجارية البيضاء (AR) - Desktop | `AR` | `DESKTOP` | [`معاينة_العلامة_التجارية_البيضاء_AR_-_Desktop_f4c5233c.png`](./01-public-discovery-flow/AR/معاينة_العلامة_التجارية_البيضاء_AR_-_Desktop_f4c5233c.png) |
-| ![Share & QR Modal (EN) - Desktop](01-public-discovery-flow/EN/Share_QR_Modal_EN_-_Desktop_c5f88730.png) | Share & QR Modal (EN) - Desktop | `EN` | `DESKTOP` | [`Share_QR_Modal_EN_-_Desktop_c5f88730.png`](./01-public-discovery-flow/EN/Share_QR_Modal_EN_-_Desktop_c5f88730.png) |
-| ![تفاصيل العميل (AR) - Tablet](01-public-discovery-flow/AR/تفاصيل_العميل_AR_-_Tablet_d82a6829.png) | تفاصيل العميل (AR) - Tablet | `AR` | `DESKTOP` | [`تفاصيل_العميل_AR_-_Tablet_d82a6829.png`](./01-public-discovery-flow/AR/تفاصيل_العميل_AR_-_Tablet_d82a6829.png) |
-| ![Notification Dropdown (EN) - Desktop](01-public-discovery-flow/EN/Notification_Dropdown_EN_-_Desktop_6e62a054.png) | Notification Dropdown (EN) - Desktop | `EN` | `DESKTOP` | [`Notification_Dropdown_EN_-_Desktop_6e62a054.png`](./01-public-discovery-flow/EN/Notification_Dropdown_EN_-_Desktop_6e62a054.png) |
-| ![09-google-stitch-design-prompt.md](01-public-discovery-flow/EN/09-google-stitch-design-promptmd_43992678.png) | 09-google-stitch-design-prompt.md | `EN` | `DESKTOP` | [`09-google-stitch-design-promptmd_43992678.png`](./01-public-discovery-flow/EN/09-google-stitch-design-promptmd_43992678.png) |
-| ![إدارة المطورين (AR) - Desktop](01-public-discovery-flow/AR/إدارة_المطورين_AR_-_Desktop_e461df06.png) | إدارة المطورين (AR) - Desktop | `AR` | `DESKTOP` | [`إدارة_المطورين_AR_-_Desktop_e461df06.png`](./01-public-discovery-flow/AR/إدارة_المطورين_AR_-_Desktop_e461df06.png) |
+- **Interactive Masterplan** 2D/3D (FR-06/07/08/09/10, Epic 1.2)
+- **Building & Floor Explorer / Floor Switcher** (FR-11/12/13)
+- **Unit Details** page/panel incl. plan, gallery, price history (FR-14/15/16/17)
+- **Advanced Filtering Engine** (FR-18/19)
+- **Comparison** up to 4 units (FR-20/21)
+- **360° Virtual Tour** rooms/hotspots/mini-map/finishes (FR-22–29)
+- **Balcony & View 360°** (FR-30)
+- **Smart Recommendation** (FR-31)
+- **Favorites / Sharing / QR** (FR-32/33/34)
+- **Payment Plans & Installment Calculator** (FR-53/54/55/56)
+- **Analytics & KPIs dashboard** (FR-38/39/39a)
+- **Notifications** (FR-57–60)
 
-
-## 📁 [02-location-masterplan-flow](./02-location-masterplan-flow/)
-
-| Preview | Title | Language | Device | Local Path |
-|---|---|---|---|---|
-| ![خريطة الموقع (AR) - Mobile](02-location-masterplan-flow/AR/خريطة_الموقع_AR_-_Mobile_93717630.png) | خريطة الموقع (AR) - Mobile | `AR` | `MOBILE` | [`خريطة_الموقع_AR_-_Mobile_93717630.png`](./02-location-masterplan-flow/AR/خريطة_الموقع_AR_-_Mobile_93717630.png) |
-| ![المخطط العام (AR) - Mobile](02-location-masterplan-flow/AR/المخطط_العام_AR_-_Mobile_a99ea025.png) | المخطط العام (AR) - Mobile | `AR` | `MOBILE` | [`المخطط_العام_AR_-_Mobile_a99ea025.png`](./02-location-masterplan-flow/AR/المخطط_العام_AR_-_Mobile_a99ea025.png) |
-| ![Masterplan 2D (EN) - Mobile](02-location-masterplan-flow/EN/Masterplan_2D_EN_-_Mobile_045dad02.png) | Masterplan 2D (EN) - Mobile | `EN` | `MOBILE` | [`Masterplan_2D_EN_-_Mobile_045dad02.png`](./02-location-masterplan-flow/EN/Masterplan_2D_EN_-_Mobile_045dad02.png) |
-| ![محدد الوحدات (AR) - Mobile](02-location-masterplan-flow/AR/محدد_الوحدات_AR_-_Mobile_67cbdb17.png) | محدد الوحدات (AR) - Mobile | `AR` | `MOBILE` | [`محدد_الوحدات_AR_-_Mobile_67cbdb17.png`](./02-location-masterplan-flow/AR/محدد_الوحدات_AR_-_Mobile_67cbdb17.png) |
-| ![Building & Floor Explorer (EN) - Desktop](02-location-masterplan-flow/EN/Building_Floor_Explorer_EN_-_Desktop_5d244278.png) | Building & Floor Explorer (EN) - Desktop | `EN` | `DESKTOP` | [`Building_Floor_Explorer_EN_-_Desktop_5d244278.png`](./02-location-masterplan-flow/EN/Building_Floor_Explorer_EN_-_Desktop_5d244278.png) |
-| ![Location & POI Map (EN) - Mobile](02-location-masterplan-flow/EN/Location_POI_Map_EN_-_Mobile_f92d65b6.png) | Location & POI Map (EN) - Mobile | `EN` | `MOBILE` | [`Location_POI_Map_EN_-_Mobile_f92d65b6.png`](./02-location-masterplan-flow/EN/Location_POI_Map_EN_-_Mobile_f92d65b6.png) |
-| ![خريطة الموقع (AR) - Desktop](02-location-masterplan-flow/AR/خريطة_الموقع_AR_-_Desktop_1cb53688.png) | خريطة الموقع (AR) - Desktop | `AR` | `DESKTOP` | [`خريطة_الموقع_AR_-_Desktop_1cb53688.png`](./02-location-masterplan-flow/AR/خريطة_الموقع_AR_-_Desktop_1cb53688.png) |
-| ![المخطط العام (AR) - Desktop](02-location-masterplan-flow/AR/المخطط_العام_AR_-_Desktop_2bb2e8f2.png) | المخطط العام (AR) - Desktop | `AR` | `DESKTOP` | [`المخطط_العام_AR_-_Desktop_2bb2e8f2.png`](./02-location-masterplan-flow/AR/المخطط_العام_AR_-_Desktop_2bb2e8f2.png) |
-| ![Building & Floor Explorer (EN) - Mobile](02-location-masterplan-flow/EN/Building_Floor_Explorer_EN_-_Mobile_580df047.png) | Building & Floor Explorer (EN) - Mobile | `EN` | `MOBILE` | [`Building_Floor_Explorer_EN_-_Mobile_580df047.png`](./02-location-masterplan-flow/EN/Building_Floor_Explorer_EN_-_Mobile_580df047.png) |
-| ![Masterplan 2D (EN) - Desktop](02-location-masterplan-flow/EN/Masterplan_2D_EN_-_Desktop_b41a0547.png) | Masterplan 2D (EN) - Desktop | `EN` | `DESKTOP` | [`Masterplan_2D_EN_-_Desktop_b41a0547.png`](./02-location-masterplan-flow/EN/Masterplan_2D_EN_-_Desktop_b41a0547.png) |
-| ![محدد الوحدات (AR) - Desktop](02-location-masterplan-flow/AR/محدد_الوحدات_AR_-_Desktop_85a16f93.png) | محدد الوحدات (AR) - Desktop | `AR` | `DESKTOP` | [`محدد_الوحدات_AR_-_Desktop_85a16f93.png`](./02-location-masterplan-flow/AR/محدد_الوحدات_AR_-_Desktop_85a16f93.png) |
-| ![Location & POI Map (EN) - Desktop](02-location-masterplan-flow/EN/Location_POI_Map_EN_-_Desktop_3b30db42.png) | Location & POI Map (EN) - Desktop | `EN` | `DESKTOP` | [`Location_POI_Map_EN_-_Desktop_3b30db42.png`](./02-location-masterplan-flow/EN/Location_POI_Map_EN_-_Desktop_3b30db42.png) |
-
-
-## 📁 [03-unit-details-tour-flow](./03-unit-details-tour-flow/)
-
-| Preview | Title | Language | Device | Local Path |
-|---|---|---|---|---|
-| ![مشهد الشرفة 360 درجة (AR) - Mobile](03-unit-details-tour-flow/AR/مشهد_الشرفة_360_درجة_AR_-_Mobile_c5819336.png) | مشهد الشرفة 360 درجة (AR) - Mobile | `AR` | `MOBILE` | [`مشهد_الشرفة_360_درجة_AR_-_Mobile_c5819336.png`](./03-unit-details-tour-flow/AR/مشهد_الشرفة_360_درجة_AR_-_Mobile_c5819336.png) |
-| ![360° Virtual Tour (EN) - Desktop](03-unit-details-tour-flow/EN/360_Virtual_Tour_EN_-_Desktop_1c023436.png) | 360° Virtual Tour (EN) - Desktop | `EN` | `DESKTOP` | [`360_Virtual_Tour_EN_-_Desktop_1c023436.png`](./03-unit-details-tour-flow/EN/360_Virtual_Tour_EN_-_Desktop_1c023436.png) |
-| ![View 360° Scene (EN) - Desktop](03-unit-details-tour-flow/EN/View_360_Scene_EN_-_Desktop_5df09455.png) | View 360° Scene (EN) - Desktop | `EN` | `DESKTOP` | [`View_360_Scene_EN_-_Desktop_5df09455.png`](./03-unit-details-tour-flow/EN/View_360_Scene_EN_-_Desktop_5df09455.png) |
-| ![مشهد الشرفة 360 درجة (AR) - Desktop](03-unit-details-tour-flow/AR/مشهد_الشرفة_360_درجة_AR_-_Desktop_e3d6b1da.png) | مشهد الشرفة 360 درجة (AR) - Desktop | `AR` | `DESKTOP` | [`مشهد_الشرفة_360_درجة_AR_-_Desktop_e3d6b1da.png`](./03-unit-details-tour-flow/AR/مشهد_الشرفة_360_درجة_AR_-_Desktop_e3d6b1da.png) |
-| ![360° Virtual Tour (AR) - Desktop](03-unit-details-tour-flow/AR/360_Virtual_Tour_AR_-_Desktop_f2ea5948.png) | 360° Virtual Tour (AR) - Desktop | `AR` | `DESKTOP` | [`360_Virtual_Tour_AR_-_Desktop_f2ea5948.png`](./03-unit-details-tour-flow/AR/360_Virtual_Tour_AR_-_Desktop_f2ea5948.png) |
-| ![360° Virtual Tour (AR) - Mobile](03-unit-details-tour-flow/AR/360_Virtual_Tour_AR_-_Mobile_ced4b2de.png) | 360° Virtual Tour (AR) - Mobile | `AR` | `MOBILE` | [`360_Virtual_Tour_AR_-_Mobile_ced4b2de.png`](./03-unit-details-tour-flow/AR/360_Virtual_Tour_AR_-_Mobile_ced4b2de.png) |
-| ![360° Virtual Tour (EN) - Mobile](03-unit-details-tour-flow/EN/360_Virtual_Tour_EN_-_Mobile_4e96f65e.png) | 360° Virtual Tour (EN) - Mobile | `EN` | `MOBILE` | [`360_Virtual_Tour_EN_-_Mobile_4e96f65e.png`](./03-unit-details-tour-flow/EN/360_Virtual_Tour_EN_-_Mobile_4e96f65e.png) |
-| ![Unit Details (EN) - Desktop](03-unit-details-tour-flow/EN/Unit_Details_EN_-_Desktop_4cb2e218.png) | Unit Details (EN) - Desktop | `EN` | `DESKTOP` | [`Unit_Details_EN_-_Desktop_4cb2e218.png`](./03-unit-details-tour-flow/EN/Unit_Details_EN_-_Desktop_4cb2e218.png) |
-| ![Unit Details (EN) - Mobile](03-unit-details-tour-flow/EN/Unit_Details_EN_-_Mobile_703215a3.png) | Unit Details (EN) - Mobile | `EN` | `MOBILE` | [`Unit_Details_EN_-_Mobile_703215a3.png`](./03-unit-details-tour-flow/EN/Unit_Details_EN_-_Mobile_703215a3.png) |
-| ![تفاصيل الوحدة (AR) - Mobile](03-unit-details-tour-flow/AR/تفاصيل_الوحدة_AR_-_Mobile_6b78bf8a.png) | تفاصيل الوحدة (AR) - Mobile | `AR` | `MOBILE` | [`تفاصيل_الوحدة_AR_-_Mobile_6b78bf8a.png`](./03-unit-details-tour-flow/AR/تفاصيل_الوحدة_AR_-_Mobile_6b78bf8a.png) |
-| ![تفاصيل الوحدة (AR) - Desktop](03-unit-details-tour-flow/AR/تفاصيل_الوحدة_AR_-_Desktop_aef7f472.png) | تفاصيل الوحدة (AR) - Desktop | `AR` | `DESKTOP` | [`تفاصيل_الوحدة_AR_-_Desktop_aef7f472.png`](./03-unit-details-tour-flow/AR/تفاصيل_الوحدة_AR_-_Desktop_aef7f472.png) |
-
-
-## 📁 [04-search-filter-comparison-flow](./04-search-filter-comparison-flow/)
-
-| Preview | Title | Language | Device | Local Path |
-|---|---|---|---|---|
-| ![Multi-Currency Toggle (EN) - Desktop](04-search-filter-comparison-flow/EN/Multi-Currency_Toggle_EN_-_Desktop_66e4b2bb.png) | Multi-Currency Toggle (EN) - Desktop | `EN` | `DESKTOP` | [`Multi-Currency_Toggle_EN_-_Desktop_66e4b2bb.png`](./04-search-filter-comparison-flow/EN/Multi-Currency_Toggle_EN_-_Desktop_66e4b2bb.png) |
-| ![Favorites List (EN) - Desktop](04-search-filter-comparison-flow/EN/Favorites_List_EN_-_Desktop_fb70fa77.png) | Favorites List (EN) - Desktop | `EN` | `DESKTOP` | [`Favorites_List_EN_-_Desktop_fb70fa77.png`](./04-search-filter-comparison-flow/EN/Favorites_List_EN_-_Desktop_fb70fa77.png) |
-| ![Advanced Filters (EN) - Mobile](04-search-filter-comparison-flow/EN/Advanced_Filters_EN_-_Mobile_63617ca2.png) | Advanced Filters (EN) - Mobile | `EN` | `MOBILE` | [`Advanced_Filters_EN_-_Mobile_63617ca2.png`](./04-search-filter-comparison-flow/EN/Advanced_Filters_EN_-_Mobile_63617ca2.png) |
-| ![Unit Comparison (AR) - Desktop](04-search-filter-comparison-flow/AR/Unit_Comparison_AR_-_Desktop_f1549390.png) | Unit Comparison (AR) - Desktop | `AR` | `DESKTOP` | [`Unit_Comparison_AR_-_Desktop_f1549390.png`](./04-search-filter-comparison-flow/AR/Unit_Comparison_AR_-_Desktop_f1549390.png) |
-| ![قائمة المفضلة (AR) - Desktop](04-search-filter-comparison-flow/AR/قائمة_المفضلة_AR_-_Desktop_9cc4a6bf.png) | قائمة المفضلة (AR) - Desktop | `AR` | `DESKTOP` | [`قائمة_المفضلة_AR_-_Desktop_9cc4a6bf.png`](./04-search-filter-comparison-flow/AR/قائمة_المفضلة_AR_-_Desktop_9cc4a6bf.png) |
-| ![منشئ خطط الدفع (AR) - Desktop](04-search-filter-comparison-flow/AR/منشئ_خطط_الدفع_AR_-_Desktop_8d79735d.png) | منشئ خطط الدفع (AR) - Desktop | `AR` | `DESKTOP` | [`منشئ_خطط_الدفع_AR_-_Desktop_8d79735d.png`](./04-search-filter-comparison-flow/AR/منشئ_خطط_الدفع_AR_-_Desktop_8d79735d.png) |
-| ![قائمة المفضلة (AR) - Mobile](04-search-filter-comparison-flow/AR/قائمة_المفضلة_AR_-_Mobile_49bdc2de.png) | قائمة المفضلة (AR) - Mobile | `AR` | `MOBILE` | [`قائمة_المفضلة_AR_-_Mobile_49bdc2de.png`](./04-search-filter-comparison-flow/AR/قائمة_المفضلة_AR_-_Mobile_49bdc2de.png) |
-| ![Advanced Filters (EN) - Desktop](04-search-filter-comparison-flow/EN/Advanced_Filters_EN_-_Desktop_b63e2c34.png) | Advanced Filters (EN) - Desktop | `EN` | `DESKTOP` | [`Advanced_Filters_EN_-_Desktop_b63e2c34.png`](./04-search-filter-comparison-flow/EN/Advanced_Filters_EN_-_Desktop_b63e2c34.png) |
-| ![Payment Calculator (EN) - Desktop](04-search-filter-comparison-flow/EN/Payment_Calculator_EN_-_Desktop_c2e712b1.png) | Payment Calculator (EN) - Desktop | `EN` | `DESKTOP` | [`Payment_Calculator_EN_-_Desktop_c2e712b1.png`](./04-search-filter-comparison-flow/EN/Payment_Calculator_EN_-_Desktop_c2e712b1.png) |
-| ![Payment Plan Builder (EN) - Desktop](04-search-filter-comparison-flow/EN/Payment_Plan_Builder_EN_-_Desktop_3f30afd7.png) | Payment Plan Builder (EN) - Desktop | `EN` | `DESKTOP` | [`Payment_Plan_Builder_EN_-_Desktop_3f30afd7.png`](./04-search-filter-comparison-flow/EN/Payment_Plan_Builder_EN_-_Desktop_3f30afd7.png) |
-| ![Payment Calculator (AR) - Desktop](04-search-filter-comparison-flow/AR/Payment_Calculator_AR_-_Desktop_1171d7ba.png) | Payment Calculator (AR) - Desktop | `AR` | `DESKTOP` | [`Payment_Calculator_AR_-_Desktop_1171d7ba.png`](./04-search-filter-comparison-flow/AR/Payment_Calculator_AR_-_Desktop_1171d7ba.png) |
-| ![Favorites List (EN) - Mobile](04-search-filter-comparison-flow/EN/Favorites_List_EN_-_Mobile_4c65155b.png) | Favorites List (EN) - Mobile | `EN` | `MOBILE` | [`Favorites_List_EN_-_Mobile_4c65155b.png`](./04-search-filter-comparison-flow/EN/Favorites_List_EN_-_Mobile_4c65155b.png) |
-| ![Advanced Filters (AR) - Desktop](04-search-filter-comparison-flow/AR/Advanced_Filters_AR_-_Desktop_f7bebfaa.png) | Advanced Filters (AR) - Desktop | `AR` | `DESKTOP` | [`Advanced_Filters_AR_-_Desktop_f7bebfaa.png`](./04-search-filter-comparison-flow/AR/Advanced_Filters_AR_-_Desktop_f7bebfaa.png) |
-| ![Advanced Filters (AR) - Mobile](04-search-filter-comparison-flow/AR/Advanced_Filters_AR_-_Mobile_7b1e5fae.png) | Advanced Filters (AR) - Mobile | `AR` | `MOBILE` | [`Advanced_Filters_AR_-_Mobile_7b1e5fae.png`](./04-search-filter-comparison-flow/AR/Advanced_Filters_AR_-_Mobile_7b1e5fae.png) |
-| ![Payment Calculator (AR) - Mobile](04-search-filter-comparison-flow/AR/Payment_Calculator_AR_-_Mobile_2702ed49.png) | Payment Calculator (AR) - Mobile | `AR` | `MOBILE` | [`Payment_Calculator_AR_-_Mobile_2702ed49.png`](./04-search-filter-comparison-flow/AR/Payment_Calculator_AR_-_Mobile_2702ed49.png) |
-| ![Payment Calculator (EN) - Mobile](04-search-filter-comparison-flow/EN/Payment_Calculator_EN_-_Mobile_57357de9.png) | Payment Calculator (EN) - Mobile | `EN` | `MOBILE` | [`Payment_Calculator_EN_-_Mobile_57357de9.png`](./04-search-filter-comparison-flow/EN/Payment_Calculator_EN_-_Mobile_57357de9.png) |
-| ![Unit Comparison (EN) - Desktop](04-search-filter-comparison-flow/EN/Unit_Comparison_EN_-_Desktop_72a9af1d.png) | Unit Comparison (EN) - Desktop | `EN` | `DESKTOP` | [`Unit_Comparison_EN_-_Desktop_72a9af1d.png`](./04-search-filter-comparison-flow/EN/Unit_Comparison_EN_-_Desktop_72a9af1d.png) |
-| ![Unit Comparison (AR) - Mobile](04-search-filter-comparison-flow/AR/Unit_Comparison_AR_-_Mobile_fd16f909.png) | Unit Comparison (AR) - Mobile | `AR` | `MOBILE` | [`Unit_Comparison_AR_-_Mobile_fd16f909.png`](./04-search-filter-comparison-flow/AR/Unit_Comparison_AR_-_Mobile_fd16f909.png) |
-| ![Unit Comparison (EN) - Mobile](04-search-filter-comparison-flow/EN/Unit_Comparison_EN_-_Mobile_39058a1b.png) | Unit Comparison (EN) - Mobile | `EN` | `MOBILE` | [`Unit_Comparison_EN_-_Mobile_39058a1b.png`](./04-search-filter-comparison-flow/EN/Unit_Comparison_EN_-_Mobile_39058a1b.png) |
-
-
-## 📁 [05-lead-capture-booking-flow](./05-lead-capture-booking-flow/)
-
-| Preview | Title | Language | Device | Local Path |
-|---|---|---|---|---|
-| ![نموذج طلب معلومات (AR) - Mobile](05-lead-capture-booking-flow/AR/نموذج_طلب_معلومات_AR_-_Mobile_ba3965d5.png) | نموذج طلب معلومات (AR) - Mobile | `AR` | `MOBILE` | [`نموذج_طلب_معلومات_AR_-_Mobile_ba3965d5.png`](./05-lead-capture-booking-flow/AR/نموذج_طلب_معلومات_AR_-_Mobile_ba3965d5.png) |
-| ![Booking / Viewing Scheduler (EN) - Tablet](05-lead-capture-booking-flow/EN/Booking_Viewing_Scheduler_EN_-_Tablet_1d620648.png) | Booking / Viewing Scheduler (EN) - Tablet | `EN` | `DESKTOP` | [`Booking_Viewing_Scheduler_EN_-_Tablet_1d620648.png`](./05-lead-capture-booking-flow/EN/Booking_Viewing_Scheduler_EN_-_Tablet_1d620648.png) |
-| ![Booking / Viewing Scheduler (EN) - Desktop](05-lead-capture-booking-flow/EN/Booking_Viewing_Scheduler_EN_-_Desktop_c48b3d01.png) | Booking / Viewing Scheduler (EN) - Desktop | `EN` | `DESKTOP` | [`Booking_Viewing_Scheduler_EN_-_Desktop_c48b3d01.png`](./05-lead-capture-booking-flow/EN/Booking_Viewing_Scheduler_EN_-_Desktop_c48b3d01.png) |
-| ![جدولة موعد (AR) - Desktop](05-lead-capture-booking-flow/AR/جدولة_موعد_AR_-_Desktop_4fc2d3de.png) | جدولة موعد (AR) - Desktop | `AR` | `DESKTOP` | [`جدولة_موعد_AR_-_Desktop_4fc2d3de.png`](./05-lead-capture-booking-flow/AR/جدولة_موعد_AR_-_Desktop_4fc2d3de.png) |
-| ![نموذج طلب معلومات (AR) - Desktop](05-lead-capture-booking-flow/AR/نموذج_طلب_معلومات_AR_-_Desktop_b29cb67e.png) | نموذج طلب معلومات (AR) - Desktop | `AR` | `DESKTOP` | [`نموذج_طلب_معلومات_AR_-_Desktop_b29cb67e.png`](./05-lead-capture-booking-flow/AR/نموذج_طلب_معلومات_AR_-_Desktop_b29cb67e.png) |
-| ![جدولة موعد (AR) - Tablet](05-lead-capture-booking-flow/AR/جدولة_موعد_AR_-_Tablet_ccf7e188.png) | جدولة موعد (AR) - Tablet | `AR` | `DESKTOP` | [`جدولة_موعد_AR_-_Tablet_ccf7e188.png`](./05-lead-capture-booking-flow/AR/جدولة_موعد_AR_-_Tablet_ccf7e188.png) |
-
-
-## 📁 [06-agent-sales-center-flow](./06-agent-sales-center-flow/)
-
-| Preview | Title | Language | Device | Local Path |
-|---|---|---|---|---|
-| ![Lead Detail View (EN) - Desktop](06-agent-sales-center-flow/EN/Lead_Detail_View_EN_-_Desktop_6e15dd09.png) | Lead Detail View (EN) - Desktop | `EN` | `DESKTOP` | [`Lead_Detail_View_EN_-_Desktop_6e15dd09.png`](./06-agent-sales-center-flow/EN/Lead_Detail_View_EN_-_Desktop_6e15dd09.png) |
-| ![الرئيسية / عروض الأسعار (AR) - Desktop](06-agent-sales-center-flow/AR/الرئيسية_عروض_الأسعار_AR_-_Desktop_a86c68bb.png) | الرئيسية / عروض الأسعار (AR) - Desktop | `AR` | `DESKTOP` | [`الرئيسية_عروض_الأسعار_AR_-_Desktop_a86c68bb.png`](./06-agent-sales-center-flow/AR/الرئيسية_عروض_الأسعار_AR_-_Desktop_a86c68bb.png) |
-| ![تسجيل دخول الوكيل (AR) - Desktop](06-agent-sales-center-flow/AR/تسجيل_دخول_الوكيل_AR_-_Desktop_a84059b9.png) | تسجيل دخول الوكيل (AR) - Desktop | `AR` | `DESKTOP` | [`تسجيل_دخول_الوكيل_AR_-_Desktop_a84059b9.png`](./06-agent-sales-center-flow/AR/تسجيل_دخول_الوكيل_AR_-_Desktop_a84059b9.png) |
-| ![Agent Home / My Leads (EN) - Tablet](06-agent-sales-center-flow/EN/Agent_Home_My_Leads_EN_-_Tablet_f59d036b.png) | Agent Home / My Leads (EN) - Tablet | `EN` | `DESKTOP` | [`Agent_Home_My_Leads_EN_-_Tablet_f59d036b.png`](./06-agent-sales-center-flow/EN/Agent_Home_My_Leads_EN_-_Tablet_f59d036b.png) |
-| ![Agent Login (EN) - Desktop](06-agent-sales-center-flow/EN/Agent_Login_EN_-_Desktop_7e937a59.png) | Agent Login (EN) - Desktop | `EN` | `DESKTOP` | [`Agent_Login_EN_-_Desktop_7e937a59.png`](./06-agent-sales-center-flow/EN/Agent_Login_EN_-_Desktop_7e937a59.png) |
-| ![Agent Login (EN) - Tablet](06-agent-sales-center-flow/EN/Agent_Login_EN_-_Tablet_b35ddfe8.png) | Agent Login (EN) - Tablet | `EN` | `DESKTOP` | [`Agent_Login_EN_-_Tablet_b35ddfe8.png`](./06-agent-sales-center-flow/EN/Agent_Login_EN_-_Tablet_b35ddfe8.png) |
-| ![وضع العرض لمركز المبيعات (AR) - Desktop](06-agent-sales-center-flow/AR/وضع_العرض_لمركز_المبيعات_AR_-_Desktop_bf78fa21.png) | وضع العرض لمركز المبيعات (AR) - Desktop | `AR` | `DESKTOP` | [`وضع_العرض_لمركز_المبيعات_AR_-_Desktop_bf78fa21.png`](./06-agent-sales-center-flow/AR/وضع_العرض_لمركز_المبيعات_AR_-_Desktop_bf78fa21.png) |
-| ![Sales Center Presentation Mode (EN) - Desktop](06-agent-sales-center-flow/EN/Sales_Center_Presentation_Mode_EN_-_Desktop_08853d80.png) | Sales Center Presentation Mode (EN) - Desktop | `EN` | `DESKTOP` | [`Sales_Center_Presentation_Mode_EN_-_Desktop_08853d80.png`](./06-agent-sales-center-flow/EN/Sales_Center_Presentation_Mode_EN_-_Desktop_08853d80.png) |
-| ![Sales Center Presentation Mode (EN) - Tablet](06-agent-sales-center-flow/EN/Sales_Center_Presentation_Mode_EN_-_Tablet_c93e108d.png) | Sales Center Presentation Mode (EN) - Tablet | `EN` | `DESKTOP` | [`Sales_Center_Presentation_Mode_EN_-_Tablet_c93e108d.png`](./06-agent-sales-center-flow/EN/Sales_Center_Presentation_Mode_EN_-_Tablet_c93e108d.png) |
-| ![Lead Detail View (EN) - Tablet](06-agent-sales-center-flow/EN/Lead_Detail_View_EN_-_Tablet_26168480.png) | Lead Detail View (EN) - Tablet | `EN` | `DESKTOP` | [`Lead_Detail_View_EN_-_Tablet_26168480.png`](./06-agent-sales-center-flow/EN/Lead_Detail_View_EN_-_Tablet_26168480.png) |
-| ![وضع العرض لمركز المبيعات (AR) - Tablet](06-agent-sales-center-flow/AR/وضع_العرض_لمركز_المبيعات_AR_-_Tablet_c2fe7411.png) | وضع العرض لمركز المبيعات (AR) - Tablet | `AR` | `DESKTOP` | [`وضع_العرض_لمركز_المبيعات_AR_-_Tablet_c2fe7411.png`](./06-agent-sales-center-flow/AR/وضع_العرض_لمركز_المبيعات_AR_-_Tablet_c2fe7411.png) |
-| ![Agent Home / My Leads (EN) - Desktop](06-agent-sales-center-flow/EN/Agent_Home_My_Leads_EN_-_Desktop_4aa30455.png) | Agent Home / My Leads (EN) - Desktop | `EN` | `DESKTOP` | [`Agent_Home_My_Leads_EN_-_Desktop_4aa30455.png`](./06-agent-sales-center-flow/EN/Agent_Home_My_Leads_EN_-_Desktop_4aa30455.png) |
-| ![الرئيسية / عروض الأسعار (AR) - Tablet](06-agent-sales-center-flow/AR/الرئيسية_عروض_الأسعار_AR_-_Tablet_f94139e3.png) | الرئيسية / عروض الأسعار (AR) - Tablet | `AR` | `DESKTOP` | [`الرئيسية_عروض_الأسعار_AR_-_Tablet_f94139e3.png`](./06-agent-sales-center-flow/AR/الرئيسية_عروض_الأسعار_AR_-_Tablet_f94139e3.png) |
-| ![تسجيل دخول الوكيل (AR) - Tablet](06-agent-sales-center-flow/AR/تسجيل_دخول_الوكيل_AR_-_Tablet_f47474a5.png) | تسجيل دخول الوكيل (AR) - Tablet | `AR` | `DESKTOP` | [`تسجيل_دخول_الوكيل_AR_-_Tablet_f47474a5.png`](./06-agent-sales-center-flow/AR/تسجيل_دخول_الوكيل_AR_-_Tablet_f47474a5.png) |
-
-
-## 📁 [07-admin-inventory-management-flow](./07-admin-inventory-management-flow/)
-
-| Preview | Title | Language | Device | Local Path |
-|---|---|---|---|---|
-| ![Admin Dashboard Home (EN) - Desktop](07-admin-inventory-management-flow/EN/Admin_Dashboard_Home_EN_-_Desktop_97c96cfb.png) | Admin Dashboard Home (EN) - Desktop | `EN` | `DESKTOP` | [`Admin_Dashboard_Home_EN_-_Desktop_97c96cfb.png`](./07-admin-inventory-management-flow/EN/Admin_Dashboard_Home_EN_-_Desktop_97c96cfb.png) |
-| ![لوحة التحليلات (AR) - Desktop](07-admin-inventory-management-flow/AR/لوحة_التحليلات_AR_-_Desktop_32f33dc1.png) | لوحة التحليلات (AR) - Desktop | `AR` | `DESKTOP` | [`لوحة_التحليلات_AR_-_Desktop_32f33dc1.png`](./07-admin-inventory-management-flow/AR/لوحة_التحليلات_AR_-_Desktop_32f33dc1.png) |
-| ![Analytics Dashboard (EN) - Desktop](07-admin-inventory-management-flow/EN/Analytics_Dashboard_EN_-_Desktop_fff6d92b.png) | Analytics Dashboard (EN) - Desktop | `EN` | `DESKTOP` | [`Analytics_Dashboard_EN_-_Desktop_fff6d92b.png`](./07-admin-inventory-management-flow/EN/Analytics_Dashboard_EN_-_Desktop_fff6d92b.png) |
-| ![CRM Integration Settings (EN) - Desktop](07-admin-inventory-management-flow/EN/CRM_Integration_Settings_EN_-_Desktop_61f01f65.png) | CRM Integration Settings (EN) - Desktop | `EN` | `DESKTOP` | [`CRM_Integration_Settings_EN_-_Desktop_61f01f65.png`](./07-admin-inventory-management-flow/EN/CRM_Integration_Settings_EN_-_Desktop_61f01f65.png) |
-| ![إدارة الوسائط (AR) - Desktop](07-admin-inventory-management-flow/AR/إدارة_الوسائط_AR_-_Desktop_9ce74594.png) | إدارة الوسائط (AR) - Desktop | `AR` | `DESKTOP` | [`إدارة_الوسائط_AR_-_Desktop_9ce74594.png`](./07-admin-inventory-management-flow/AR/إدارة_الوسائط_AR_-_Desktop_9ce74594.png) |
-| ![Audit Log (EN) - Desktop](07-admin-inventory-management-flow/EN/Audit_Log_EN_-_Desktop_9f53eb51.png) | Audit Log (EN) - Desktop | `EN` | `DESKTOP` | [`Audit_Log_EN_-_Desktop_9f53eb51.png`](./07-admin-inventory-management-flow/EN/Audit_Log_EN_-_Desktop_9f53eb51.png) |
-| ![Admin Login (EN) - Desktop](07-admin-inventory-management-flow/EN/Admin_Login_EN_-_Desktop_ee76d9d9.png) | Admin Login (EN) - Desktop | `EN` | `DESKTOP` | [`Admin_Login_EN_-_Desktop_ee76d9d9.png`](./07-admin-inventory-management-flow/EN/Admin_Login_EN_-_Desktop_ee76d9d9.png) |
-| ![تسجيل دخول المسؤول (AR) - Desktop](07-admin-inventory-management-flow/AR/تسجيل_دخول_المسؤول_AR_-_Desktop_094639ce.png) | تسجيل دخول المسؤول (AR) - Desktop | `AR` | `DESKTOP` | [`تسجيل_دخول_المسؤول_AR_-_Desktop_094639ce.png`](./07-admin-inventory-management-flow/AR/تسجيل_دخول_المسؤول_AR_-_Desktop_094639ce.png) |
-| ![Public API & Webhooks Management (EN) - Desktop](07-admin-inventory-management-flow/EN/Public_API_Webhooks_Management_EN_-_Desktop_ce9c276f.png) | Public API & Webhooks Management (EN) - Desktop | `EN` | `DESKTOP` | [`Public_API_Webhooks_Management_EN_-_Desktop_ce9c276f.png`](./07-admin-inventory-management-flow/EN/Public_API_Webhooks_Management_EN_-_Desktop_ce9c276f.png) |
-| ![Inventory Management (EN) - Desktop](07-admin-inventory-management-flow/EN/Inventory_Management_EN_-_Desktop_870dbfc4.png) | Inventory Management (EN) - Desktop | `EN` | `DESKTOP` | [`Inventory_Management_EN_-_Desktop_870dbfc4.png`](./07-admin-inventory-management-flow/EN/Inventory_Management_EN_-_Desktop_870dbfc4.png) |
-| ![سجل التنبيهات (AR) - Desktop](07-admin-inventory-management-flow/AR/سجل_التنبيهات_AR_-_Desktop_a9d5e098.png) | سجل التنبيهات (AR) - Desktop | `AR` | `DESKTOP` | [`سجل_التنبيهات_AR_-_Desktop_a9d5e098.png`](./07-admin-inventory-management-flow/AR/سجل_التنبيهات_AR_-_Desktop_a9d5e098.png) |
-| ![مركز التنبيهات - القائمة المنسدلة (AR) - Desktop](07-admin-inventory-management-flow/AR/مركز_التنبيهات_-_القائمة_المنسدلة_AR_-_Desktop_c6b79ce2.png) | مركز التنبيهات - القائمة المنسدلة (AR) - Desktop | `AR` | `DESKTOP` | [`مركز_التنبيهات_-_القائمة_المنسدلة_AR_-_Desktop_c6b79ce2.png`](./07-admin-inventory-management-flow/AR/مركز_التنبيهات_-_القائمة_المنسدلة_AR_-_Desktop_c6b79ce2.png) |
-| ![تحديث الحالة - حالة التعارض (AR) - Desktop](07-admin-inventory-management-flow/AR/تحديث_الحالة_-_حالة_التعارض_AR_-_Desktop_95a9cd13.png) | تحديث الحالة - حالة التعارض (AR) - Desktop | `AR` | `DESKTOP` | [`تحديث_الحالة_-_حالة_التعارض_AR_-_Desktop_95a9cd13.png`](./07-admin-inventory-management-flow/AR/تحديث_الحالة_-_حالة_التعارض_AR_-_Desktop_95a9cd13.png) |
-| ![مركز التنبيهات - القائمة المنسدلة (AR) - Tablet](07-admin-inventory-management-flow/AR/مركز_التنبيهات_-_القائمة_المنسدلة_AR_-_Tablet_1601acb4.png) | مركز التنبيهات - القائمة المنسدلة (AR) - Tablet | `AR` | `DESKTOP` | [`مركز_التنبيهات_-_القائمة_المنسدلة_AR_-_Tablet_1601acb4.png`](./07-admin-inventory-management-flow/AR/مركز_التنبيهات_-_القائمة_المنسدلة_AR_-_Tablet_1601acb4.png) |
-| ![لوحة تحكم المسؤول (AR) - Desktop](07-admin-inventory-management-flow/AR/لوحة_تحكم_المسؤول_AR_-_Desktop_164f4ad2.png) | لوحة تحكم المسؤول (AR) - Desktop | `AR` | `DESKTOP` | [`لوحة_تحكم_المسؤول_AR_-_Desktop_164f4ad2.png`](./07-admin-inventory-management-flow/AR/لوحة_تحكم_المسؤول_AR_-_Desktop_164f4ad2.png) |
-| ![إعدادات التكامل مع CRM (AR) - Desktop](07-admin-inventory-management-flow/AR/إعدادات_التكامل_مع_CRM_AR_-_Desktop_155ab552.png) | إعدادات التكامل مع CRM (AR) - Desktop | `AR` | `DESKTOP` | [`إعدادات_التكامل_مع_CRM_AR_-_Desktop_155ab552.png`](./07-admin-inventory-management-flow/AR/إعدادات_التكامل_مع_CRM_AR_-_Desktop_155ab552.png) |
-
+Reference the flows above in `05-functional-requirements.md`, `06-product-backlog.md`,
+and `08-design-guidelines.md` before designing these.
