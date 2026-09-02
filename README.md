@@ -45,3 +45,23 @@ The full original SRS remains the canonical, most detailed source and is still u
 ## Source
 
 Generated from `EstateX_SRS_Backlog_DB_PMP_EN.md`, Version 2.0, August 31, 2026.
+
+## Live deployment
+
+- **Web app:** https://estatex-web-liart.vercel.app (en/ar, RTL)
+- **API:** https://estatex-api.vercel.app (base path `/api`)
+
+## Codebase layout
+
+Monorepo (npm workspaces):
+
+- `apps/api` – NestJS REST API + Prisma (PostgreSQL on Neon). Deploys to Vercel as a serverless function via `serverless.ts` (`vercel.json` builds it); `prisma generate` runs on install.
+- `apps/web` – Next.js (App Router) bilingual frontend using `next-intl` (en/ar). All routes are server-rendered on demand and read from the API via `NEXT_PUBLIC_API_URL`.
+
+## Local development
+
+1. `npm install` at the repo root.
+2. Create `apps/api/.env` with `DATABASE_URL` (Neon pooled) and `JWT_SECRET`.
+3. `npm run db:deploy -w @estatex/api` && `npm run seed -w @estatex/api`
+4. `npm run dev -w @estatex/api` (port 4000) and `npm run dev -w @estatex/web` (Next on 3000).
+5. Create `apps/web/.env.local` with `NEXT_PUBLIC_API_URL=http://localhost:4000/api`.
