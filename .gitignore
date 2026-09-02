@@ -12,3 +12,4 @@ next-env.d.ts
 
 # local scripts config
 # keep the SRS markdown docs in git
+.vercel
