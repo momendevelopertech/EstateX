@@ -23,7 +23,12 @@
   "home": {
     "projectsTitle": "Available projects",
     "projectsSubtitle": "Find your next home or investment opportunity.",
-    "projectsEmpty": "No projects available right now."
+    "projectsEmpty": "No projects available right now.",
+    "projectsNoResults": "No projects match your search.",
+    "searchName": "Project name",
+    "searchLocation": "Location",
+    "searchPriceMax": "Max starting price",
+    "searchCta": "Search"
   },
   "project": {
     "overview": "Overview",
@@ -32,6 +37,7 @@
     "mapNoData": "No map data for this project yet.",
     "masterplan2d": "2D masterplan",
     "selectBuilding": "Select a building in the plan to explore its floors and units.",
+    "hintDragZoom": "Drag to pan, scroll to zoom",
     "developer": "Developer",
     "launchDate": "Launch date",
     "startingPrice": "Starting price",
@@ -89,6 +95,15 @@
     "leadSubmit": "Request visit",
     "leadSuccess": "Request received — our team will contact you.",
     "visitButton": "Book a visit",
+    "whatsapp": "WhatsApp",
+    "features": "Features",
+    "balcony": "Balcony",
+    "terrace": "Terrace",
+    "parking": "Parking",
+    "storage": "Storage",
+    "garden": "Garden",
+    "view": "View",
+    "orientation": "Orientation",
     "backToProject": "Back to project"
   },
   "favorites": {

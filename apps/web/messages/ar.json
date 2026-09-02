@@ -23,7 +23,12 @@
   "home": {
     "projectsTitle": "المشاريع المتاحة",
     "projectsSubtitle": "اعثر على منزلك أو فرصتك الاستثمارية القادمة.",
-    "projectsEmpty": "لا توجد مشاريع متاحة حالياً."
+    "projectsEmpty": "لا توجد مشاريع متاحة حالياً.",
+    "projectsNoResults": "لا توجد مشاريع تطابق بحثك.",
+    "searchName": "اسم المشروع",
+    "searchLocation": "الموقع",
+    "searchPriceMax": "الحد الأقصى للسعر المبدئي",
+    "searchCta": "بحث"
   },
   "project": {
     "overview": "نظرة عامة",
@@ -32,6 +37,7 @@
     "mapNoData": "لا توجد بيانات خريطة لهذا المشروع بعد.",
     "masterplan2d": "المخطط العام ثنائي الأبعاد",
     "selectBuilding": "اختر مبنى من المخطط لاستكشاف طوابقه ووحداته.",
+    "hintDragZoom": "اسحب للتحريك، ومرّر عجلة الفأرة للتكبير",
     "developer": "المطوّر",
     "launchDate": "تاريخ الإطلاق",
     "startingPrice": "السعر المبدئي",
@@ -89,6 +95,15 @@
     "leadSubmit": "طلب الزيارة",
     "leadSuccess": "تم استلام الطلب — سيتواصل معك فريقنا.",
     "visitButton": "احجز زيارة",
+    "whatsapp": "واتساب",
+    "features": "المميزات",
+    "balcony": "بلكونة",
+    "terrace": "تراس",
+    "parking": "موقف سيارات",
+    "storage": "مخزن",
+    "garden": "حديقة",
+    "view": "الإطلالة",
+    "orientation": "الاتجاه",
     "backToProject": "العودة إلى المشروع"
   },
   "favorites": {

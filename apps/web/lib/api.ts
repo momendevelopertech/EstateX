@@ -67,9 +67,16 @@ function adHdr(token: string): Record<string, string> {
 }
 
 export const api = {
-  listProjects(): Promise<Project[]> {
-    return fetcher<Project[] | ListResponse<Project>>("/projects").then((r) =>
-      Array.isArray(r) ? r : (r.projects ?? []),
+  listProjects(
+    params?: Record<string, string | number | undefined>,
+  ): Promise<Project[]> {
+    const qs = new URLSearchParams();
+    for (const [k, v] of Object.entries(params ?? {})) {
+      if (v !== undefined && v !== "") qs.set(k, String(v));
+    }
+    const q = qs.toString();
+    return fetcher<Project[] | ListResponse<Project>>(`/projects${q ? `?${q}` : ""}`).then(
+      (r) => (Array.isArray(r) ? r : (r.projects ?? [])),
     );
   },
 
