@@ -3,7 +3,8 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { api } from "@/lib/api";
 import { formatDate, formatPrice } from "@/lib/format";
-import ProjectFloorBrowser from "@/components/ProjectFloorBrowser";
+import MasterplanSection from "@/components/MasterplanSection";
+import ProjectMap from "@/components/ProjectMap";
 import type { Building } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -85,9 +86,14 @@ export default async function ProjectPage({
         </div>
       </div>
 
+      <div className="mt-10">
+        <h2 className="mb-4 text-2xl font-extrabold tracking-tight">{t("mapTitle")}</h2>
+        <ProjectMap project={project} />
+      </div>
+
       <div className="mt-12">
         <h2 className="mb-6 text-2xl font-extrabold tracking-tight">{t("masterplan")}</h2>
-        <ProjectFloorBrowser buildings={buildings} />
+        <MasterplanSection buildings={buildings} />
       </div>
     </section>
   );

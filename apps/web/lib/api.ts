@@ -1,8 +1,10 @@
 import type {
+  AuthUser,
   CalcResult,
   Favorite,
   Floor,
   ListResponse,
+  Notification,
   PaymentPlan,
   Project,
   Unit,
@@ -13,9 +15,12 @@ const API_BASE =
 
 export class ApiClientError extends Error {
   status: number;
-  constructor(status: number, message: string) {
+  details?: any;
+  constructor(status: number, message: string, details?: any) {
     super(message);
+    this.name = "ApiClientError";
     this.status = status;
+    this.details = details;
   }
 }
 
@@ -27,8 +32,10 @@ async function fetcher<T>(path: string, init?: RequestInit): Promise<T> {
   });
   if (!res.ok) {
     let message = `Request failed (${res.status})`;
+    let details;
     try {
       const body = await res.json();
+      details = body;
       message =
         typeof body?.message === "string"
           ? body.message
@@ -36,7 +43,7 @@ async function fetcher<T>(path: string, init?: RequestInit): Promise<T> {
     } catch {
       /* keep default message */
     }
-    throw new ApiClientError(res.status, message);
+    throw new ApiClientError(res.status, message, details);
   }
   const text = await res.text();
   return text ? (JSON.parse(text) as T) : ({} as T);
@@ -53,6 +60,10 @@ function normalizeUnit(u: any): Unit {
     price: num(u.price),
     statusVersion: num(u.statusVersion),
   };
+}
+
+function adHdr(token: string): Record<string, string> {
+  return { authorization: `Bearer ${token}` };
 }
 
 export const api = {
@@ -173,9 +184,79 @@ export const api = {
   },
 
   login(email: string, password: string) {
-    return fetcher<{ accessToken: string; user: unknown }>("/auth/login", {
+    return fetcher<{ accessToken: string; user: AuthUser }>("/auth/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
+    });
+  },
+
+  // --- Admin (JWT) ---
+
+  listNotifications(
+    token: string,
+  ): Promise<{ notifications: Notification[]; unread: number }> {
+    return fetcher<{ notifications: Notification[]; unread: number }>("/notifications", {
+      headers: adHdr(token),
+    }).then((r) => ({
+      notifications: r.notifications ?? [],
+      unread: Number(r.unread ?? 0),
+    }));
+  },
+
+  markNotificationRead(token: string, id: string): Promise<{ ok: boolean }> {
+    return fetcher<{ ok: boolean }>(`/notifications/${encodeURIComponent(id)}/read`, {
+      method: "PATCH",
+      headers: adHdr(token),
+    });
+  },
+
+  createUnit(
+    token: string,
+    data: {
+      floorId: string;
+      unitNumber: string;
+      unitTypeId?: string | null;
+      area: number;
+      price: number;
+      status?: string;
+    },
+  ): Promise<{ ok: boolean; id: string }> {
+    return fetcher<{ ok: boolean; id: string }>("/units", {
+      method: "POST",
+      headers: adHdr(token),
+      body: JSON.stringify(data),
+    });
+  },
+
+  updateUnit(
+    token: string,
+    id: string,
+    data: {
+      price?: number;
+      area?: number;
+      unitTypeId?: string | null;
+      view?: string | null;
+      orientation?: string | null;
+      imageUrl?: string | null;
+    },
+  ): Promise<{ ok: boolean }> {
+    return fetcher<{ ok: boolean }>(`/units/${encodeURIComponent(id)}`, {
+      method: "PATCH",
+      headers: adHdr(token),
+      body: JSON.stringify(data),
+    });
+  },
+
+  changeUnitStatus(
+    token: string,
+    id: string,
+    status: string,
+    expectedVersion: number,
+  ): Promise<{ ok: boolean }> {
+    return fetcher<{ ok: boolean }>(`/units/${encodeURIComponent(id)}/status`, {
+      method: "PATCH",
+      headers: adHdr(token),
+      body: JSON.stringify({ status, expectedVersion }),
     });
   },
 };

@@ -20,8 +20,14 @@ export default async function Header() {
           <Link href="/projects" className="rounded-full px-3 py-1.5 transition hover:bg-slate-100 hover:text-slate-900">
             {t("projects")}
           </Link>
+          <Link href="/units" className="rounded-full px-3 py-1.5 transition hover:bg-slate-100 hover:text-slate-900">
+            {t("units")}
+          </Link>
           <Link href="/favorites" className="rounded-full px-3 py-1.5 transition hover:bg-slate-100 hover:text-slate-900">
             {t("favorites")}
+          </Link>
+          <Link href="/admin/inventory" className="rounded-full px-3 py-1.5 transition hover:bg-slate-100 hover:text-slate-900">
+            {t("admin")}
           </Link>
         </nav>
 

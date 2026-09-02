@@ -6,15 +6,29 @@ import type { Building, Floor, Unit } from "@/lib/types";
 import { api } from "@/lib/api";
 import UnitCard from "./UnitCard";
 
-export default function ProjectFloorBrowser({ buildings }: { buildings: Building[] }) {
+export default function ProjectFloorBrowser({
+  buildings,
+  buildingId: controlledId,
+  onBuildingChange,
+}: {
+  buildings: Building[];
+  buildingId?: string;
+  onBuildingChange?: (id: string) => void;
+}) {
   const t = useTranslations("project");
   const ct = useTranslations("common");
-  const [buildingId, setBuildingId] = useState<string>(() => buildings[0]?.id ?? "");
+  const [internalId, setInternalId] = useState<string>(() => buildings[0]?.id ?? "");
+  const buildingId = controlledId ?? internalId;
   const [floors, setFloors] = useState<Floor[]>([]);
   const [floorId, setFloorId] = useState<string>("");
   const [units, setUnits] = useState<Unit[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+
+  const selectBuilding = (id: string) => {
+    setInternalId(id);
+    onBuildingChange?.(id);
+  };
 
   const building = useMemo(
     () => buildings.find((b) => b.id === buildingId) ?? buildings[0],
@@ -66,7 +80,7 @@ export default function ProjectFloorBrowser({ buildings }: { buildings: Building
         <label className="text-sm font-bold text-slate-700">{t("buildings")}</label>
         <select
           value={building?.id}
-          onChange={(e) => setBuildingId(e.target.value)}
+          onChange={(e) => selectBuilding(e.target.value)}
           className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-800"
         >
           {buildings.map((b) => (

@@ -6,8 +6,10 @@
   "nav": {
     "home": "Home",
     "projects": "Projects",
+    "units": "Units",
     "favorites": "Favorites",
     "bookings": "My bookings",
+    "admin": "Admin",
     "login": "Sign in",
     "langLabel": "Language"
   },
@@ -26,6 +28,10 @@
   "project": {
     "overview": "Overview",
     "location": "Location",
+    "mapTitle": "Location map",
+    "mapNoData": "No map data for this project yet.",
+    "masterplan2d": "2D masterplan",
+    "selectBuilding": "Select a building in the plan to explore its floors and units.",
     "developer": "Developer",
     "launchDate": "Launch date",
     "startingPrice": "Starting price",
@@ -90,6 +96,78 @@
     "empty": "You have no saved units yet.",
     "remove": "Remove",
     "notSignedIn": "Favorites require a guest session or login."
+  },
+  "unitsPage": {
+    "title": "Units",
+    "subtitle": "Browse and filter units across all projects.",
+    "filters": "Filters",
+    "bedrooms": "Bedrooms",
+    "any": "Any",
+    "status": "Status",
+    "priceMin": "Min price",
+    "priceMax": "Max price",
+    "areaMin": "Min area (m²)",
+    "amenities": "Amenities",
+    "balcony": "Balcony",
+    "terrace": "Terrace",
+    "parking": "Parking",
+    "garden": "Garden",
+    "results": "{count} units",
+    "noResults": "No units match your filters.",
+    "reset": "Reset filters"
+  },
+  "admin": {
+    "title": "Admin",
+    "login": {
+      "title": "Admin sign in",
+      "subtitle": "Sign in to manage inventory and notifications.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "error": "Invalid credentials. Try admin@estatex.com / Admin@123"
+    },
+    "signout": "Sign out",
+    "inventory": {
+      "title": "Inventory",
+      "subtitle": "Live unit statuses — updates are concurrency-checked.",
+      "addUnit": "Add unit",
+      "edit": "Edit",
+      "search": "Search…",
+      "empty": "No units match.",
+      "saved": "Saved.",
+      "created": "Unit created.",
+      "error": "Request failed.",
+      "statusConflict": "This unit was changed by another user. Current status: {status}.",
+      "statusConflictTitle": "Status conflict",
+      "create": "Add unit",
+      "project": "Project",
+      "building": "Building",
+      "floor": "Floor",
+      "placeholders": {
+        "selectProject": "Select project",
+        "selectBuilding": "Select building",
+        "selectFloor": "Select floor",
+        "unitNumber": "e.g. AZ-101",
+        "area": "Area (m²)",
+        "price": "Price (EGP)",
+        "status": "Status"
+      },
+      "columns": {
+        "unit": "Unit",
+        "location": "Location",
+        "type": "Type",
+        "area": "Area",
+        "price": "Price",
+        "status": "Status"
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "empty": "No notifications yet.",
+      "unread": "{count} unread",
+      "markRead": "Mark read",
+      "from": "Sent at {time}"
+    }
   },
   "common": {
     "loading": "Loading…",

@@ -58,6 +58,7 @@ export interface Unit {
   status: string;
   statusVersion: number;
   orientation?: string | null;
+  view?: string | null;
   hasBalcony: boolean;
   hasTerrace: boolean;
   hasStorage: boolean;
@@ -124,6 +125,24 @@ export interface CalcResult {
   months: number;
   perInstallment: number;
   schedule: Array<{ number: number; dueAt: string; grossDue: number }>;
+}
+
+export interface AuthUser {
+  id: string;
+  email: string;
+  name?: string | null;
+  role: string;
+}
+
+export interface Notification {
+  id: string;
+  type: string;
+  channel: string;
+  status: string;
+  payload?: any;
+  relatedEntity?: string | null;
+  relatedEntityId?: string | null;
+  createdAt: string;
 }
 
 export interface ListResponse<T> {
