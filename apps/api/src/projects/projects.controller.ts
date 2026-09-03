@@ -38,7 +38,10 @@ export class ProjectsController {
         const available = await this.prisma.unit.count({
           where: { status: "available", floor: { building: { projectId: p.id } } },
         });
-        return { ...p, availableUnits: available };
+        const hero = p.heroMediaId
+          ? await this.prisma.media.findUnique({ where: { id: p.heroMediaId } })
+          : null;
+        return { ...p, availableUnits: available, heroImageUrl: hero?.url ?? null };
       }),
     );
     return { projects: annotated };
@@ -56,7 +59,10 @@ export class ProjectsController {
       },
     });
     if (!project) throw new NotFoundException("Project not found");
-    return { project };
+    const hero = project.heroMediaId
+      ? await this.prisma.media.findUnique({ where: { id: project.heroMediaId } })
+      : null;
+    return { project: { ...project, heroImageUrl: hero?.url ?? null } };
   }
 
   @Get("projects/:id/pois")

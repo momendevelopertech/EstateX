@@ -55,7 +55,7 @@ The Stitch project referenced in the executive prompt
 (`https://stitch.withgoogle.com/projects/1520195418730042747`) is not programmatically
 accessible (it is a client-side-only interactive app; a plain fetch returns only the app
 shell). The repository carries a local export of the earlier Stitch project
-(`Design/`, project `15015285934878213590`), which has EN and AR screens for most flows.
+(`design/`, project `15015285934878213590`), which has EN and AR screens for most flows.
 
 The authoring model for this environment **cannot render images**, so a pixel-level visual
 diff against the Stitch exports is not possible. Per `08-design-guidelines.md` (and the
