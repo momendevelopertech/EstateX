@@ -17,6 +17,8 @@ export interface Project {
   startingPrice: number | string;
   baseCurrency: string;
   heroMediaId?: string | null;
+  /** Resolved by the projects API from the project's selected hero media. */
+  heroImageUrl?: string | null;
   launchDate?: string | null;
   availableUnits?: number;
   buildings?: Array<Building & { _count?: { floors: number } }>;

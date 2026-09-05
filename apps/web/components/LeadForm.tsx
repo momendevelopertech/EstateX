@@ -9,6 +9,8 @@ export default function LeadForm({ unitId }: { unitId: string }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [contactMethod, setContactMethod] = useState("whatsapp");
+  const [scheduledAt, setScheduledAt] = useState("");
   const [done, setDone] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
@@ -18,7 +20,7 @@ export default function LeadForm({ unitId }: { unitId: string }) {
     setBusy(true);
     setError(false);
     try {
-      await api.submitLead({ unitId, name, phone, email });
+      await api.submitLead({ unitId, name, phone, email, contactMethod, scheduledAt: scheduledAt || undefined });
       setDone(true);
     } catch {
       setError(true);
@@ -46,6 +48,21 @@ export default function LeadForm({ unitId }: { unitId: string }) {
           onChange={(e) => setName(e.target.value)}
           className="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm"
         />
+        <fieldset>
+          <legend className="mb-2 text-sm font-bold text-slate-700">{t("preferredContact")}</legend>
+          <div className="grid grid-cols-3 gap-2">
+            {["whatsapp", "call", "email"].map((method) => (
+              <label key={method} className={`cursor-pointer rounded-lg border px-2 py-2 text-center text-xs font-bold capitalize ${contactMethod === method ? "border-emerald-600 bg-emerald-50 text-emerald-800" : "border-slate-200 text-slate-600"}`}>
+                <input className="sr-only" type="radio" name="contactMethod" value={method} checked={contactMethod === method} onChange={() => setContactMethod(method)} />
+                {t(`contact.${method}` as never)}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <label className="block text-sm font-bold text-slate-700">
+          {t("viewingDate")}
+          <input type="datetime-local" value={scheduledAt} onChange={(e) => setScheduledAt(e.target.value)} className="mt-1.5 w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm font-normal" />
+        </label>
         <input
           placeholder={t("leadPhone")}
           value={phone}

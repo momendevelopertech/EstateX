@@ -76,6 +76,7 @@
     "paymentPlan": "خطة السداد",
     "calculator": "حاسبة الأقساط",
     "downPayment": "الدفعة المقدمة",
+    "deliveryPayment": "مستحق عند الاستلام",
     "months": "الأقساط ({count} شهر)",
     "schedule": "الجدول التقديري",
     "installment": "القسط الشهري",
@@ -93,6 +94,13 @@
     "leadPhone": "الهاتف",
     "leadEmail": "البريد الإلكتروني",
     "leadSubmit": "طلب الزيارة",
+    "preferredContact": "وسيلة التواصل المفضلة",
+    "viewingDate": "تاريخ ووقت الزيارة المفضل",
+    "contact": {
+      "whatsapp": "واتساب",
+      "call": "اتصال",
+      "email": "البريد الإلكتروني"
+    },
     "leadSuccess": "تم استلام الطلب — سيتواصل معك فريقنا.",
     "visitButton": "احجز زيارة",
     "whatsapp": "واتساب",

@@ -70,6 +70,22 @@ export async function seed(): Promise<void> {
     },
   });
 
+  // The card and project detail use the same selected media record rather than
+  // maintaining a second, frontend-only image URL.
+  const heroMedia = await prisma.media.create({
+    data: {
+      ownerType: "project",
+      ownerId: project.id,
+      type: "image",
+      url: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85",
+      order: 0,
+    },
+  });
+  await prisma.project.update({
+    where: { id: project.id },
+    data: { heroMediaId: heroMedia.id },
+  });
+
   // 2. POIs + amenities
   const pois = [
     ["New Cairo International Airport", "airport", 18],

@@ -170,6 +170,8 @@ export const api = {
     phone?: string;
     email?: string;
     message?: string;
+    contactMethod?: string;
+    scheduledAt?: string;
   }): Promise<{ ok: boolean; id?: string }> {
     return fetcher<{ ok: boolean; id?: string }>("/leads", {
       method: "POST",

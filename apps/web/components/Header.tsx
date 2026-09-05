@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import LanguageSwitcher from "./LanguageSwitcher";
+import NotificationDropdown from "./NotificationDropdown";
 
 export default async function Header() {
   const t = await getTranslations("nav");
@@ -31,7 +32,10 @@ export default async function Header() {
           </Link>
         </nav>
 
-        <LanguageSwitcher />
+        <div className="flex items-center gap-1">
+          <NotificationDropdown />
+          <LanguageSwitcher />
+        </div>
       </div>
     </header>
   );

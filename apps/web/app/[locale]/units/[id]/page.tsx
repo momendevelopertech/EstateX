@@ -14,6 +14,7 @@ export default async function UnitPage({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const t = await getTranslations("unit");
   const locale = await getLocale();
+  const backArrow = locale === "ar" ? "→" : "←";
 
   let unit;
   let plans;
@@ -48,20 +49,36 @@ export default async function UnitPage({ params }: { params: Promise<{ id: strin
           href={`/projects/${project.slug}`}
           className="text-sm font-semibold text-emerald-700 hover:underline"
         >
-          ← {t("backToProject")}
+          {backArrow} {t("backToProject")}
         </Link>
       )}
 
       <div className="mt-4 grid gap-10 lg:grid-cols-5">
         <div className="lg:col-span-3">
-          <div className="relative flex h-80 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-800 to-slate-950">
+          <div className="relative flex h-80 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 to-slate-950">
+            {tour?.scenes?.[0]?.panoramaUrl && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={tour.scenes[0].panoramaUrl} alt={tour.scenes[0].roomName} className="absolute inset-0 h-full w-full object-cover" />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
             <span className="absolute start-3 top-3">
               <StatusBadge status={unit.status} />
             </span>
-            <span className="text-7xl font-black tracking-tight text-white/15">
+            {!tour?.scenes?.[0]?.panoramaUrl && <span className="relative text-7xl font-black tracking-tight text-white/15">
               {unit.unitNumber}
-            </span>
+            </span>}
           </div>
+
+          {tour?.scenes && tour.scenes.length > 1 && (
+            <div className="mt-3 flex gap-3 overflow-x-auto pb-1" aria-label={t("tourScenes")}>
+              {tour.scenes.map((scene) => (
+                <a key={scene.id} href={`#scene-${scene.id}`} className="shrink-0 overflow-hidden rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={scene.panoramaUrl} alt={scene.roomName} className="h-16 w-24 object-cover" />
+                </a>
+              ))}
+            </div>
+          )}
 
           <div className="mt-4 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
             <div className="rounded-xl border border-slate-200 bg-white p-4">
@@ -118,7 +135,7 @@ export default async function UnitPage({ params }: { params: Promise<{ id: strin
               {tour.scenes && tour.scenes.length > 0 && (
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   {tour.scenes.map((s) => (
-                    <div key={s.id} className="overflow-hidden rounded-xl border border-slate-200">
+                    <div id={`scene-${s.id}`} key={s.id} className="overflow-hidden rounded-xl border border-slate-200">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={s.panoramaUrl} alt={s.roomName} className="h-32 w-full object-cover" />
                       <p className="px-3 py-2 text-xs font-semibold text-slate-600">

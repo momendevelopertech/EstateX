@@ -30,7 +30,7 @@ export class LeadsController {
   @Post("leads")
   @HttpCode(201)
   async createLead(@Body() body: any) {
-    const { unitId, name, phone, email, message, source, userId, guestContact } = body;
+    const { unitId, name, phone, email, message, source, userId, guestContact, contactMethod, scheduledAt } = body;
     if (!unitId || (!name && !phone && !email)) {
       throw new UnprocessableEntityException(
         "unitId and at least one of name/phone/email are required",
@@ -47,6 +47,8 @@ export class LeadsController {
       name: name ?? null,
       phone: phone ?? null,
       email: email ?? null,
+      preferredContactMethod: contactMethod ?? null,
+      preferredViewingAt: scheduledAt ?? null,
       ...(guestContact ?? {}),
     };
     const lead = await this.prisma.lead.create({
