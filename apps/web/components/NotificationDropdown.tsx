@@ -1,13 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { mockNotifications } from "@/lib/mock-data";
 
 type Notice = { id: string; title: string; detail: string; time: string; unread: boolean };
 
-const INITIAL_NOTICES: Notice[] = [
-  { id: "availability", title: "Availability updated", detail: "A saved unit is currently available.", time: "Just now", unread: true },
-  { id: "viewing", title: "Viewing reminder", detail: "Your site visit is scheduled for tomorrow.", time: "2h ago", unread: true },
-];
+const INITIAL_NOTICES: Notice[] = mockNotifications.map((notice, index) => ({
+  id: notice.id,
+  title: String(notice.payload?.title ?? "Notification"),
+  detail: String(notice.payload?.detail ?? ""),
+  time: index === 0 ? "Just now" : "2h ago",
+  unread: true,
+}));
 
 /** Client-only fallback for public pages; authenticated feeds can replace this source via the API adapter. */
 export default function NotificationDropdown() {

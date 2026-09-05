@@ -81,12 +81,12 @@
 
 | المهمة | الحالة |
 | --- | --- |
-| TASK-001 Project Card | PARTIALLY PASSED — build verified; visual runtime awaits seeded API |
-| TASK-002 Floor Browser | PARTIALLY PASSED — build verified; visual runtime awaits seeded API |
-| TASK-003 Unit Details | PARTIALLY PASSED — gallery and RTL back link implemented; price history pending |
-| TASK-004 Calculator | PARTIALLY PASSED — range sliders and delivery row implemented |
-| TASK-005 Lead Form | PARTIALLY PASSED — contact method and viewing datetime submitted through API |
-| TASK-006 Notification Dropdown | PARTIALLY PASSED — header bell and readable dropdown implemented |
+| TASK-001 Project Card | PARTIALLY PASSED — mock route runs; browser screenshot comparison pending |
+| TASK-002 Floor Browser | PARTIALLY PASSED — mock route runs; browser screenshot comparison pending |
+| TASK-003 Unit Details | FAILED — missing required floorplan viewer and price-history timeline |
+| TASK-004 Calculator | PARTIALLY PASSED — mock route runs; visual comparison identifies layout differences |
+| TASK-005 Lead Form | PARTIALLY PASSED — mock submit path supplied; visual comparison identifies layout differences |
+| TASK-006 Notification Dropdown | PARTIALLY PASSED — mock notifications run; browser click/screenshot comparison pending |
 | TASK-007 Agent Login | NOT STARTED |
 | TASK-008 Agent Leads | NOT STARTED |
 | TASK-009 Agent Lead Detail | NOT STARTED |
