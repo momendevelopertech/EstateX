@@ -81,12 +81,12 @@
 
 | المهمة | الحالة |
 | --- | --- |
-| TASK-001 Project Card | PARTIALLY PASSED — build verified; visual runtime awaits seeded API |
-| TASK-002 Floor Browser | PARTIALLY PASSED — build verified; visual runtime awaits seeded API |
-| TASK-003 Unit Details | NOT STARTED |
-| TASK-004 Calculator | NOT STARTED |
-| TASK-005 Lead Form | NOT STARTED |
-| TASK-006 Notification Dropdown | NOT STARTED |
+| TASK-001 Project Card | PARTIALLY PASSED — mock route runs; browser screenshot comparison pending |
+| TASK-002 Floor Browser | PARTIALLY PASSED — mock route runs; browser screenshot comparison pending |
+| TASK-003 Unit Details | FAILED — missing required floorplan viewer and price-history timeline |
+| TASK-004 Calculator | PARTIALLY PASSED — mock route runs; visual comparison identifies layout differences |
+| TASK-005 Lead Form | PARTIALLY PASSED — mock submit path supplied; visual comparison identifies layout differences |
+| TASK-006 Notification Dropdown | PARTIALLY PASSED — mock notifications run; browser click/screenshot comparison pending |
 | TASK-007 Agent Login | NOT STARTED |
 | TASK-008 Agent Leads | NOT STARTED |
 | TASK-009 Agent Lead Detail | NOT STARTED |
@@ -105,3 +105,4 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | TASK-001 | `design/01-public-discovery-flow/EN/Project_Home_EN_-_Desktop_bf440991.png` | `ProjectCard`, `StatusBadge`, projects API/seed | `npm run build:web` passed | `/en` returns 200; API was unavailable | UNVERIFIED — no browser screenshot tool and no seeded API | `HEAD` — TASK-001 commit | Seed the API/database, then capture EN/AR desktop/mobile comparisons |
 | TASK-002 | `design/02-location-masterplan-flow/EN/Building_Floor_Explorer_EN_-_Desktop_5d244278.png` | `ProjectFloorBrowser` | `npm run build:web` passed | API unavailable | UNVERIFIED — no browser screenshot tool and no seeded API | Pending | Seed the API/database, then capture EN/AR desktop/mobile comparisons |
+| TASK-003–006 | Batch 1 references in `design/` | Unit details, calculator, lead form, notifications | Web/API builds passed | API unavailable | UNVERIFIED — no browser screenshot tool and no seeded API | Pending | Add price history and verify all Batch 1 flows with seeded data |

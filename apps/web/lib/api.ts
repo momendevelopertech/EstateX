@@ -9,6 +9,7 @@ import type {
   Project,
   Unit,
 } from "./types";
+import { mockFetch } from "./mock-data";
 
 const API_BASE =
   process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/api";
@@ -25,6 +26,7 @@ export class ApiClientError extends Error {
 }
 
 async function fetcher<T>(path: string, init?: RequestInit): Promise<T> {
+  if (process.env.NEXT_PUBLIC_USE_MOCK_DATA !== "false") return mockFetch<T>(path, init);
   const res = await fetch(`${API_BASE}${path}`, {
     ...init,
     headers: { "content-type": "application/json", ...(init?.headers ?? {}) },
@@ -170,6 +172,8 @@ export const api = {
     phone?: string;
     email?: string;
     message?: string;
+    contactMethod?: string;
+    scheduledAt?: string;
   }): Promise<{ ok: boolean; id?: string }> {
     return fetcher<{ ok: boolean; id?: string }>("/leads", {
       method: "POST",

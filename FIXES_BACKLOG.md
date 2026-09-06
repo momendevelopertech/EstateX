@@ -50,12 +50,12 @@ Open unit page, drag down payment slider, verify instant recalculation matching 
 ---
 
 ### TASK-005: Enhance LeadForm Component with Preferred Channel & Date Scheduler
-**Traces to:** FR-35, FR-59, `design/05-lead-capture-booking-flow/EN/Lead_Capture_Form_EN_-_Desktop_b7a2416c.png`
+**Traces to:** FR-35, FR-59, `design/01-public-discovery-flow/EN/Lead_Capture_Form_EN_-_Desktop_b7a2416c.png`
 **Status found:** 🔴 WRONG (`LeadForm.tsx` has 3 basic text fields only, missing contact method selector and date picker)
 **What to do:**
 Update `apps/web/components/LeadForm.tsx` to include Preferred Contact Method radio group (WhatsApp / Call / Email) and Viewing Date/Time picker.
 **Acceptance check:**
-Submit lead form on unit page, verify contact method and viewing date are sent to API matching `design/05-lead-capture-booking-flow/EN/Lead_Capture_Form_EN_-_Desktop_b7a2416c.png`.
+Submit lead form on unit page, verify contact method and viewing date are sent to API matching `design/01-public-discovery-flow/EN/Lead_Capture_Form_EN_-_Desktop_b7a2416c.png`.
 
 ---
 

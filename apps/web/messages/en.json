@@ -76,6 +76,7 @@
     "paymentPlan": "Payment plan",
     "calculator": "Installment calculator",
     "downPayment": "Down payment",
+    "deliveryPayment": "Due on delivery",
     "months": "Installments ({count} months)",
     "schedule": "Estimated schedule",
     "installment": "Monthly installment",
@@ -93,6 +94,13 @@
     "leadPhone": "Phone",
     "leadEmail": "Email",
     "leadSubmit": "Request visit",
+    "preferredContact": "Preferred contact method",
+    "viewingDate": "Preferred viewing date and time",
+    "contact": {
+      "whatsapp": "WhatsApp",
+      "call": "Call",
+      "email": "Email"
+    },
     "leadSuccess": "Request received — our team will contact you.",
     "visitButton": "Book a visit",
     "whatsapp": "WhatsApp",

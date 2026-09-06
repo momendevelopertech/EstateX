@@ -71,27 +71,30 @@ export default function InstallmentCalculator({
               ))}
             </select>
           </label>
-          <label className="block text-sm">
-            <span className="font-bold text-slate-600">{t("downPayment")} (%)</span>
+          <label className="block text-sm sm:col-span-1">
+            <span className="flex justify-between font-bold text-slate-600"><span>{t("downPayment")}</span><output>{effectiveDown}%</output></span>
             <input
-              type="number"
-              min={1}
+              type="range"
+              min={10}
               max={90}
               value={effectiveDown}
               onChange={(e) => setDown(Number(e.target.value))}
-              className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-sm font-semibold"
+              className="mt-3 w-full accent-emerald-600"
             />
+            <span className="mt-1 flex justify-between text-xs text-slate-400"><span>10%</span><span>90%</span></span>
           </label>
-          <label className="block text-sm">
-            <span className="font-bold text-slate-600">{t("months", { count: effectiveMonths })}</span>
+          <label className="block text-sm sm:col-span-1">
+            <span className="flex justify-between font-bold text-slate-600"><span>{t("months", { count: effectiveMonths })}</span><output>{effectiveMonths}</output></span>
             <input
-              type="number"
-              min={1}
+              type="range"
+              min={12}
               max={120}
+              step={12}
               value={effectiveMonths}
               onChange={(e) => setMonths(Number(e.target.value))}
-              className="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 text-sm font-semibold"
+              className="mt-3 w-full accent-emerald-600"
             />
+            <span className="mt-1 flex justify-between text-xs text-slate-400"><span>12</span><span>120</span></span>
           </label>
         </div>
 
@@ -116,6 +119,12 @@ export default function InstallmentCalculator({
               <dd className="mt-1 font-extrabold text-slate-900">{formatPrice(derived.perInstallment, locale)}</dd>
             </div>
           </dl>
+        )}
+        {derived && !error && plan.deliveryLinkedPercent != null && plan.deliveryLinkedPercent > 0 && (
+          <div className="flex items-center justify-between rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm">
+            <span className="font-semibold text-amber-900">{t("deliveryPayment")}</span>
+            <span className="font-mono font-extrabold text-amber-900">{plan.deliveryLinkedPercent}% · {formatPrice(Math.round((totalPrice * plan.deliveryLinkedPercent) / 100), locale)}</span>
+          </div>
         )}
       </div>
     </div>
